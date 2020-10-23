@@ -1,0 +1,65 @@
+body {
+  margin: 0px;
+}
+.entire {
+  background-color: #262525;
+  height: 100vh;
+  margin: 0px;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 38%;
+  transform: translate(-50%, -50%);
+
+  font-size: 50px;
+  color: white;
+
+  opacity: 0;
+  animation: move 3s ease 1s forwards infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: rotateZ(180deg);
+  }
+
+  30% {
+    color: yellow;
+    ;
+  }
+
+  60% {
+    color: red;
+  }
+
+  60% {
+    transform: scale(3);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+    opacity: 1;
+  }
+}
+
+.beast {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  animation: show 3s ease 1s forwards infinite;
+  opacity: 0;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotateZ(360deg);
+  }
+}
