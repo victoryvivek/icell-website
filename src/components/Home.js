@@ -7,9 +7,11 @@ import "../static/css/home.css";
 class Home extends Component {
   render() {
     return (
-      <div>
-        <p>Home</p>
-      </div>
+      <>
+        <div>
+          <p>Home</p>
+        </div>
+      </>
     );
   }
 }
