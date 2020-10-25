@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import Navbar from "../components/Navbar"
 import * as actionTypes from "../store/actions";
 import "../static/css/home.css";
 
@@ -8,6 +9,7 @@ class Home extends Component {
   render() {
     return (
       <>
+      <Navbar/>
         <div>
           <p>Home</p>
         </div>
