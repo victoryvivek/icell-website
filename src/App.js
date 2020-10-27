@@ -12,9 +12,9 @@ class App extends Component {
     return (
       <>
       
-        <Route path="/" exact component={Landing} />
         <Route path="/home" exact component={Home} />
         <Route path="/about" exact component={About} />
+        <Route path="/" exact component={Landing} />
       </>
     );
   }

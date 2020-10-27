@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
 import "../static/css/landing.css";
 import icelllogo from "../static/img/icell.gif";
 
@@ -21,11 +20,6 @@ class Landing extends Component {
       this.removeDisplay();
       return (
         <div className="entire">
-          {/* <div>
-            <img className="beast" src={icelllogo} alt="icell-logo" />
-          </div>
-           */}
-
           <div class="socket">
             <div class="gel center-gel">
               <div class="hex-brick h1"></div>
@@ -214,17 +208,12 @@ class Landing extends Component {
               <div class="hex-brick h2"></div>
               <div class="hex-brick h3"></div>
             </div>
-
           </div>
           <div className="content">Industry Cell</div>
         </div>
       );
     } else {
-      return (
-        <div>
-          <Redirect to="/home" />
-        </div>
-      );
+      window.location.href="/home"
     }
   }
 }
