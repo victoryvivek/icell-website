@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import "../static/css/landing.css";
-import icelllogo from "../static/img/icell.gif";
 
 class Landing extends Component {
   state = {
@@ -13,7 +12,7 @@ class Landing extends Component {
       this.setState({
         display: false
       });
-    }, 8000);
+    }, 5000);
   };
 
   render() {
@@ -214,7 +213,6 @@ class Landing extends Component {
               <div class="hex-brick h2"></div>
               <div class="hex-brick h3"></div>
             </div>
-
           </div>
           <div className="content">Industry Cell</div>
         </div>
