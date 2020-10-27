@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
 import "../static/css/landing.css";
 
 class Landing extends Component {
@@ -20,11 +19,6 @@ class Landing extends Component {
       this.removeDisplay();
       return (
         <div className="entire">
-          {/* <div>
-            <img className="beast" src={icelllogo} alt="icell-logo" />
-          </div>
-           */}
-
           <div class="socket">
             <div class="gel center-gel">
               <div class="hex-brick h1"></div>
@@ -218,11 +212,7 @@ class Landing extends Component {
         </div>
       );
     } else {
-      return (
-        <div>
-          <Redirect to="/home" />
-        </div>
-      );
+      window.location.href="/home"
     }
   }
 }

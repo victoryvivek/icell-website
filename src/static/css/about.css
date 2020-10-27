@@ -1,3 +1,47 @@
-.about_icon{
-    width: 40%;
+.card-panel{
+    border-radius: 50%;
+    width: 215.45px;
+    margin: auto;
+    margin-bottom: 4%;
+}
+.logo{
+    width: 20%;
+    margin: auto;
+}
+.upperTitleBackground
+{
+    background: url("../img/about.jpg");
+    background-size: cover;
+    color: white;
+    text-shadow: 0 2px 5px grey;
+    padding: 6%;
+    box-shadow: inset 0 2px 15px black;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+.upperTitleBackground h1{
+    font-size: 6em;
+}
+.aboutPara
+{
+    font-size: 2em;
+    text-align: justify;
+}
+.sponsorBackground
+{
+    background: url("../img/corporate.jpg");
+    background-size: cover;
+    color: white;
+    text-shadow: 0 2px 5px grey;
+    padding: 6%;
+    box-shadow: inset 0 2px 15px black;
+    background-attachment: fixed;
+    background-position: center;
+    text-align: center;
+}
+.sponsorsLogo{
+    width: 200px;
+    box-shadow: 0 0 10px black;
 }
