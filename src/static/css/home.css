@@ -114,9 +114,19 @@
     font-size: 230%;
     line-height: 10px;
     position: relative;
-    top: 200px; 
+    top: 0px; 
     padding-left: 20px;
     text-shadow: 1px 1px rgba(241, 178, 17, 0.69) ;
+    animation: move-down 3s ease 1s forwards;
+  }
+
+  @keyframes move-down {
+    0%{
+      top:0px;
+    }
+    100%{
+      top: 200px;
+    }
   }
 
   .content-home {
