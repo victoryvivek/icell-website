@@ -1,0 +1,117 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+.upperTitleBackground
+{
+    background: url("../img/teamBackground.jpg");
+    background-size: cover;
+    color: white;
+    text-shadow: 0 2px 5px grey;
+    padding: 6%;
+    box-shadow: inset 0 2px 15px black;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.card{
+    margin: 5% 10%;
+    border-radius: 10%;
+    box-shadow: 0px 10px 10px grey;
+    height: 400px;
+}
+.card-content{
+    text-align: center;
+   
+}
+.card-title{
+    font-weight: bold!important;
+    font-size: xx-large!important;
+    font-family: Montserrat;
+}
+.card-content p{
+    font-size: larger;
+    font-style: italic;
+}
+.CoreTeamMemberImage
+{
+    width: 200px;
+    border-radius: 50%;
+}
+.cardTeamMembers
+{
+    display: inline-block;
+    margin: 2% 2%!important;
+    color: white!important;
+    height: 250px;
+}
+.cardTeamMembersSpan{
+    font-size: 1em!important;
+}
+.TeamMemberImage
+{
+    width:100px;
+    border-radius: 50%;
+}
+.cardCoreTeam:hover{
+    background-color: rgba(0, 0, 0, 0.2)!important;
+    position: relative;
+    cursor: pointer;
+}
+.cardCoreTeam:hover .CoreTeamMemberImage
+{
+    opacity: 0.2;
+}
+.cardCoreTeam:hover .beforeHover{
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    color: white!important;
+    
+}
+.cardCoreTeam:hover .beforeHover span{
+    
+    position: absolute;
+    padding: 0!important;
+    margin: 0!important;
+    width: 100%;
+    animation: nameshift 1s forwards;
+    text-shadow: 0 0 10px rgb(56, 53, 53),0 0 20px rgb(56, 53, 53);
+}
+.cardCoreTeam:hover .beforeHover p{
+    
+    position: absolute;
+    padding: 0!important;
+    margin: 0!important;
+    width: 100%;
+    animation: porshift 1s forwards;
+    text-shadow: 0 0 10px  rgb(56, 53, 53),0 0 20px rgb(56, 53, 53);
+}
+@keyframes nameshift{
+    0%{
+        top: 80%;
+    }
+    100%{
+      top: 30%;  
+    }
+}
+@keyframes porshift{
+    0%{
+        top: 90%;
+    }
+    100%{
+      top: 50%;  
+    }
+}
+.afterHover
+{
+    display: none;
+}
+svg{
+    margin:auto 4%;
+    display: none;
+    text-shadow: 0 0 10px grey;
+}
+
+.cardCoreTeam:hover svg{
+    display: inline-block;
+}
