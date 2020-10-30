@@ -24,27 +24,38 @@ class NavBar extends Component {
     return (
       <>
         <nav className="navbar">
+          <div class="nav-wrapper black">
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+              <i class="material-icons">menu</i>
+            </a>
+            <img src={icelllogo} className="navbarLogo left" />
 
-    <div class="nav-wrapper black">
-      
-    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    <img src={icelllogo} className="navbarLogo left"/>
-        
-      <div className="left">
-      
-        <div className="title">Industry Cell</div>
-      <div className="subTitle">NIT Kurukshetra</div>
-      </div>
-      <ul class="right hide-on-med-and-down">
-          <li><a href="/home">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/event">Events</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/team">Team</a></li>
-          <li><a href="/contact">Contact </a></li>
-      </ul>
-    </div>
-  </nav>
+            <div className="left">
+              <div className="title">Industry Cell</div>
+              <div className="subTitle">NIT Kurukshetra</div>
+            </div>
+            <ul class="right hide-on-med-and-down">
+              <li>
+                <a href="/home">Home</a>
+              </li>
+              <li>
+                <a href="/about">About</a>
+              </li>
+              <li>
+                <a href="/events">Events</a>
+              </li>
+              <li>
+                <a href="/blog">Blog</a>
+              </li>
+              <li>
+                <a href="/team">Team</a>
+              </li>
+              <li>
+                <a href="/contact">Contact </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
         <ul class="sidenav" id="mobile-demo">
           <li>
             <a href="/home">Home</a>
