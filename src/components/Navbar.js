@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import M from "materialize-css";
 import icelllogo from "../static/img/icell.gif";
 import "../static/css/navbar.css";
@@ -36,22 +38,22 @@ class NavBar extends Component {
             </div>
             <ul class="right hide-on-med-and-down">
               <li>
-                <a href="/home">Home</a>
+                <Link to="/home">Home</Link>
               </li>
               <li>
-                <a href="/about">About</a>
+                <Link to="/about">About</Link>
               </li>
               <li>
-                <a href="/events">Events</a>
+                <Link to="/events">Events</Link>
               </li>
               <li>
-                <a href="/blog">Blog</a>
+                <Link to="/blog">Blog</Link>
               </li>
               <li>
-                <a href="/team">Team</a>
+                <Link to="/team">Team</Link>
               </li>
               <li>
-                <a href="/contact">Contact </a>
+                <Link to="/contact">Contact </Link>
               </li>
             </ul>
           </div>
