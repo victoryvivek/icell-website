@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 
 import Navbar from "../components/Navbar";
 
@@ -7,7 +8,7 @@ class NotFound extends Component {
     return (
       <div>
         <Navbar />
-        Blog
+        <Redirect to="/comingsoon" />
       </div>
     );
   }
