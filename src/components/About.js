@@ -51,7 +51,7 @@ const About = () => {
       <Navbar />
 
       <div className="container-fluid">
-        <div className="row upperTitleBackground">
+        <div className="row upperAboutTitleBackground">
           <div className="col m12 s12">
             <h1 className="center align">About Us</h1>
           </div>
@@ -87,7 +87,7 @@ different kinds of quizzes, events and also workshops.</li>
 
         <div class="row">
           <div class="col m4 s12">
-            <div class="card-panel light-blue darken-1 z-depth-3"  data-aos="fade-left" data-aos-duration="1000">
+            <div class="card-panel valueIncrease light-blue darken-1 z-depth-3"  data-aos="fade-left" data-aos-duration="1000">
               <div class="card-content white-text">
                 <span class="card-title">
                 <h1 className="center align" id="eventsNo">35</h1>
@@ -104,7 +104,7 @@ different kinds of quizzes, events and also workshops.</li>
             </div>
           </div>
           <div class="col m4 s12">
-            <div class="card-panel cyan darken-1 z-depth-3" data-aos="fade-left" data-aos-duration="1000">
+            <div class="card-panel valueIncrease cyan darken-1 z-depth-3" data-aos="fade-left" data-aos-duration="1000">
               <div class="card-content white-text">
                 <span class="card-title">
                 <h1 className="center align"  id="studentsNo">99</h1>
@@ -119,7 +119,7 @@ different kinds of quizzes, events and also workshops.</li>
             </div>
           </div>
           <div class="col m4 s12">
-            <div class="card-panel teal accent-3 z-depth-3" data-aos="fade-left" data-aos-duration="1000">
+            <div class="card-panel valueIncrease teal accent-3 z-depth-3" data-aos="fade-left" data-aos-duration="1000">
               <div class="card-content white-text">
                 <span class="card-title">
                 <h1 className="center align"  id="expertsNo">63</h1>

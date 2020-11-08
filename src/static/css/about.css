@@ -1,4 +1,4 @@
-.card-panel{
+.valueIncrease{
     border-radius: 50%;
     width: 215.45px;
     margin: auto;
@@ -8,7 +8,7 @@
     width: 20%;
     margin: auto;
 }
-.upperTitleBackground
+.upperAboutTitleBackground
 {
     background: url("../img/about.jpg");
     background-size: cover;
@@ -22,7 +22,7 @@
 }
 
 
-.upperTitleBackground h1{
+.upperAboutTitleBackground h1{
     font-size: 6em;
 }
 .aboutPara

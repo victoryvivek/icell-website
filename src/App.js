@@ -4,6 +4,7 @@ import Landing from "./components/Landing";
 import Home from "./components/Home";
 import About from './components/About'
 import Teams from "./components/Team"
+import Contacts from "./components/Contact";
 
 class App extends Component {
 
@@ -15,6 +16,7 @@ class App extends Component {
         <Route path="/about" exact component={About} />
         <Route path="/" exact component={Landing} />
         <Route path="/team" exact component={Teams} />
+        <Route path="/contact" exact component={Contacts} />
       </>
     );
   }
