@@ -31,9 +31,9 @@ class Home extends Component {
             </p>
           </div>
           <div>
-            <Link to="/about" className="know">
+            <a href="/about" className="know">
               Know More
-            </Link>
+            </a>
           </div>
         </div>
       </>

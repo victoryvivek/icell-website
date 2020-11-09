@@ -11,10 +11,12 @@ import Blog from "./components/Blog";
 import ContactUs from "./components/ContactUs";
 import ComingSoon from "./components/ComingSoon";
 
+
 class App extends Component {
   render() {
     return (
       <>
+
         <Switch>
           <Route path="/home" exact component={Home} />
           <Route path="/about" exact component={About} />
