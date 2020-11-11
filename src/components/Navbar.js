@@ -82,6 +82,11 @@ class NavBar extends Component {
           <li>
             <Link to="/contact" onClick={()=>{closeSideNav()}}>Contact </Link>
           </li>
+          <li>
+            <p className="disclaimer">
+          © All rights are retained by Industry cell, National Institute of Technology, Kurukshetra.
+          </p>
+          </li>
         </ul>
       </>
     );
