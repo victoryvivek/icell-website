@@ -18,14 +18,15 @@ class Home extends Component {
         <div className="row" style={{marginBottom:0,paddingBottom:20}}>
           <div className="col s12 m6">
           
-            <img className="bulb" src={bulb} alt="innovation" />
-            <p className="headingHome" data-aos="fade-down">innovation</p>
-            <p className="headingHome" data-aos="fade-down">leadership</p>
-            <p className="headingHome" data-aos="fade-down">enterpreneurship</p>
+            <img data-aos="fade-right" className="bulb" src={bulb} alt="innovation" />
           
           </div>
           <div className="col s12 m6">
           <div className="contentSideHome">
+          <p className="headingHome" data-aos="fade-down">innovation</p>
+            <p className="headingHome" data-aos="fade-down">leadership</p>
+            <p className="headingHome" data-aos="fade-down">enterpreneurship</p>
+          
             <p className="contentHome">
               That is what drives us. Welcome to the official website of
               Industry Cell, National Institute of Technology. With a passion to
