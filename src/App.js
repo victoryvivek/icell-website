@@ -1,14 +1,13 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch,BrowserRouter } from "react-router-dom";
 import Landing from "./components/Landing";
 import Home from "./components/Home";
-
 import About from "./components/About";
 import Teams from "./components/Team";
 import Events from "./components/Events";
 import NotFound from "./components/NotFound";
 import Blog from "./components/Blog";
-import ContactUs from "./components/ContactUs";
+import ContactUs from "./components/Contact";
 import ComingSoon from "./components/ComingSoon";
 
 
@@ -16,7 +15,7 @@ class App extends Component {
   render() {
     return (
       <>
-
+      <BrowserRouter>
         <Switch>
           <Route path="/home" exact component={Home} />
           <Route path="/about" exact component={About} />
@@ -28,6 +27,7 @@ class App extends Component {
           <Route path="/" exact component={Landing} />
           <Route component={NotFound} />
         </Switch>
+        </BrowserRouter>
       </>
     );
   }

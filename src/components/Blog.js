@@ -8,7 +8,10 @@ class NotFound extends Component {
     return (
       <div>
         <Navbar />
-        <Redirect to="/comingsoon" />
+        {/* <Redirect to="/comingsoon" /> */}
+        {
+          window.location.href="/comingsoon"
+  }
       </div>
     );
   }

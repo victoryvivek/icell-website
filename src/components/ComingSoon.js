@@ -24,9 +24,9 @@ class NotFound extends Component {
           </div>
 
           <div>
-            <Link to="/home" className="homebtn">
+            <a href="/home" className="homebtn">
               Show me the Homepage
-            </Link>
+            </a>
           </div>
         </div>
       </>

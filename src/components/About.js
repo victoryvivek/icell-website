@@ -3,50 +3,69 @@ import "../static/css/about.css"
 import Navbar from "../components/Navbar"
 import icell_logo from "../static/img/icell_background.jpg";
 const About = () => {
-
-  window.onscroll = function(){
-    var eventsNo = document.getElementById("eventsNo").getBoundingClientRect();
-
-    var studentsNo = document.getElementById("studentsNo").getBoundingClientRect();
+  {
+    console.log(window.location.pathname)
     
-    var expertsNo = document.getElementById("expertsNo").getBoundingClientRect();
-    console.log(Math.floor(eventsNo.top-window.scrollY))
+  window.onscroll = function(){
+    var path = window.location.pathname;
+    var patt = path.search(/\/about/);
+    
+    var eventsNo,studentsNo,expertsNo;
+    if(patt==0)
+     eventsNo = document.getElementById("eventsNo").getBoundingClientRect();
+    if(patt==0)
+    studentsNo = document.getElementById("studentsNo").getBoundingClientRect();
+    if(patt==0)
+    expertsNo = document.getElementById("expertsNo").getBoundingClientRect();
+    
+    if(patt==0)
     if(Math.floor(eventsNo.top-window.scrollY)<=0&&Math.floor(eventsNo.top-window.scrollY)>=-100)
     {
         var x = 200;
         var s = setInterval(() => {
+          
+            if(patt==0)
             document.getElementById("eventsNo").innerText ="+" + x;
             x = x + 1;
             if(x>500)
             clearInterval(s);
         }, 5);
     }
+    
+    if(patt==0)
     if(Math.floor(studentsNo.top-window.scrollY)<=0&&Math.floor(studentsNo.top-window.scrollY)>=-100)
     {
         var y = 500;
         var p = setInterval(() => {
-
+            
+          if(patt==0)
             document.getElementById("studentsNo").innerText ="+" + y;
             y = y + 1;
             if(y>900)
             clearInterval(p);
         }, 1.25);
     }
+    
+    if(patt==0)
     if(Math.floor(expertsNo.top-window.scrollY)<=0&&Math.floor(expertsNo.top-window.scrollY)>=-100)
     {
         var z = 400;
         var t = setInterval(() => {
+          
+          if(patt==0)
             document.getElementById("expertsNo").innerText ="+" + z;
             z = z + 1;
             if(z>750)
             clearInterval(t);
         }, 2.5);
     }
+  }
 }
-
+  
 
 
   return (
+    
     <div>
       <Navbar />
 
