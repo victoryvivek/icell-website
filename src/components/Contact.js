@@ -1,11 +1,9 @@
 import React from "react"
 import "../static/css/contact.css"
-import Navbar from "../components/Navbar"
 
 const Contact = () => {
   return (
     <>
-      <Navbar />
       <div className="container-fluid">
         <div className="row upperContactTitleBackground">
           <div className="col m12 s12">

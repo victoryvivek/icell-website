@@ -1,6 +1,5 @@
 import React from 'react';
 import "../static/css/about.css"
-import Navbar from "../components/Navbar"
 import icell_logo from "../static/img/icell_background.jpg";
 const About = () => {
   {
@@ -67,7 +66,6 @@ const About = () => {
   return (
     
     <div>
-      <Navbar />
 
       <div className="container-fluid">
         <div className="row upperAboutTitleBackground">

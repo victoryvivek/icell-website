@@ -9,25 +9,34 @@ import NotFound from "./components/NotFound";
 import Blog from "./components/Blog";
 import ContactUs from "./components/Contact";
 import ComingSoon from "./components/ComingSoon";
-
-
+import Navbar from "./components/Navbar";
+const Nav_components = () =>{
+  return(<>
+    <Route path="/home" exact component={Home} />
+    <Route path="/about" exact component={About} />
+    <Route path="/events" exact component={Events} />
+    <Route path="/team" exact component={Teams} />
+    <Route path="/blog" exact component={Blog} />
+    <Route path="/contact" exact component={ContactUs} />
+    <Route path="/comingsoon" exact component={ComingSoon} />
+    
+    </>
+  )
+}
 class App extends Component {
+  
   render() {
     return (
       <>
-      <BrowserRouter>
+      {
+            window.location.pathname=="/"?"":<Navbar/>
+      }
         <Switch>
-          <Route path="/home" exact component={Home} />
-          <Route path="/about" exact component={About} />
-          <Route path="/events" exact component={Events} />
-          <Route path="/team" exact component={Teams} />
-          <Route path="/blog" exact component={Blog} />
-          <Route path="/contact" exact component={ContactUs} />
-          <Route path="/comingsoon" exact component={ComingSoon} />
           <Route path="/" exact component={Landing} />
+          <Nav_components/>
           <Route component={NotFound} />
         </Switch>
-        </BrowserRouter>
+        
       </>
     );
   }

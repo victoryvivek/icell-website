@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import Navbar from "../components/Navbar";
 import "../static/css/notfound.css";
 
 class NotFound extends Component {
   render() {
     return (
       <div>
-        <Navbar />
         <div id="notfound">
           <div className="notfound">
             <div className="notfound-404">

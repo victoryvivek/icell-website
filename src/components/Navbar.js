@@ -20,7 +20,12 @@ document.addEventListener("DOMContentLoaded", function() {
   };
   var instances = M.Sidenav.init(elems, options);
 });
-
+function closeSideNav()
+{
+  var el = document.querySelector(".sidenav");
+  var inst = M.Sidenav.getInstance(el);
+  inst.close();
+}
 class NavBar extends Component {
   render() {
     return (
@@ -60,22 +65,22 @@ class NavBar extends Component {
         </nav>
         <ul class="sidenav" id="mobile-demo">
           <li>
-            <a href="/home">Home</a>
+            <Link to="/home"  onClick={()=>{closeSideNav()}}>Home</Link>
           </li>
           <li>
-            <a href="/about">About</a>
+            <Link to="/about" onClick={()=>{closeSideNav()}}>About</Link>
           </li>
           <li>
-            <a href="/events">Events</a>
+            <Link to="/events" onClick={()=>{closeSideNav()}}>Events</Link>
           </li>
           <li>
-            <a href="/blog">Blog</a>
+            <Link to="/blog" onClick={()=>{closeSideNav()}}>Blog</Link>
           </li>
           <li>
-            <a href="/team">Team</a>
+            <Link to="/team" onClick={()=>{closeSideNav()}}>Team</Link>
           </li>
           <li>
-            <a href="/contact">Contact </a>
+            <Link to="/contact" onClick={()=>{closeSideNav()}}>Contact </Link>
           </li>
         </ul>
       </>

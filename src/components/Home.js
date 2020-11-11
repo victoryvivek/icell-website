@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-import Navbar from "../components/Navbar";
 import * as actionTypes from "../store/actions";
 import "../static/css/home.css";
 
@@ -13,30 +12,36 @@ class Home extends Component {
 
   render() {
     return (
-      <>
-        <div className="outfit">
-          <Navbar />
-          <div>
+      
+      <div className="container-fluid black outfitHome">
+        <div className="row"></div>
+        <div className="row" style={{marginBottom:0,paddingBottom:20}}>
+          <div className="col s12 m6">
+          
             <img className="bulb" src={bulb} alt="innovation" />
-            <p className="heading">innovation</p>
-            <p className="heading">leadership</p>
-            <p className="heading">enterpreneurship</p>
+            <p className="headingHome" data-aos="fade-down">innovation</p>
+            <p className="headingHome" data-aos="fade-down">leadership</p>
+            <p className="headingHome" data-aos="fade-down">enterpreneurship</p>
+          
           </div>
-          <div>
-            <p className="content-home">
+          <div className="col s12 m6">
+          <div className="contentSideHome">
+            <p className="contentHome">
               That is what drives us. Welcome to the official website of
               Industry Cell, National Institute of Technology. With a passion to
               innovate and lead with persistence, we are the Trailblazers, ready
               to tackle challenges and make the world a better place to live.
             </p>
-          </div>
-          <div>
-            <a href="/about" className="know">
+          
+          
+            <Link to="/about" className="knowHome">
               Know More
-            </a>
+            </Link>
+            </div>
           </div>
         </div>
-      </>
+      </div>
+      
     );
   }
 }

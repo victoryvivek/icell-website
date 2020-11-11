@@ -10,7 +10,7 @@ class NotFound extends Component {
     return (
       <>
         <div className="outfit-comingsoon">
-          <Navbar />
+          
           <div>
             <img
               className="construction-comingsoon"
