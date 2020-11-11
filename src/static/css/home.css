@@ -1,148 +1,61 @@
-.outfit {
-  background-color: black;
-  height: 100vh;
-  overflow-x: hidden;
-}
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
-.bulb{
-  float: left;
-  width: 500px;
-  height: 450px;
-  margin: 20px;
-}
-
-.heading{
+ .bulb
+ {
+   width: 75%;
+ }
+ .headingHome{
   color: red;
   font-family: Raleway;
   font-style: normal;
   font-weight: bold;
-  font-size: 50px;
-  line-height: 25px;
+  font-size: 3rem;
+  line-height: 10%;
   text-transform: uppercase;
+  
 }
-.content-home{
+.contentHome
+{
+  font-size: 2rem;
+  margin-bottom: 20px;
   color: white;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 20px;
-}
-.know{
-  background: rgba(241, 178, 17, 0.69) !important;
+  font-family: 'Raleway', sans-serif;
   
-  color: #FBFBFB;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  margin: 2px;
-  padding: 7px;
-  line-height: 12px;
-  text-align: center;
-  text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.25);
 }
-
-.know:hover{
-  box-shadow: 0px 0px 4px 3px rgba(138, 134, 134, 0.58);
+.outfitHome
+{
+  height: 100vh;
 }
-
-@media only screen and (max-width:1100px){
-  .heading {
-    font-size: 250%;
-    line-height: 20px;
+.contentSideHome
+{
+  position: absolute;
+  top: 30%;
+}
+.knowHome{
+  background-color: khaki;
+  padding: 12px;
+  margin-top: 30px;
+}
+@media screen and (max-width:660px)
+{.contentSideHome
+  {
+  position: relative;
   }
-  
-  .bulb {
+  .outfitHome{
+    height: auto;
+  }
+  .headingHome{
+    color: red;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 10%;
+    text-transform: uppercase;
     
-    width: 65vh;
-    height: 400px;
   }
+  .contentHome
+{
+  font-size: 1.5rem;
 }
-
-@media only screen and (max-width:800px) {
-  .bulb {
-    display: none;
-  }
-
-  .outfit {
-    background-image: url(../img/bulb.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    background-position: center;
-    background-color: white;
-  }
-
-  .heading {
-    font-size: 450%;
-    line-height: 20px;
-    position: relative;
-    top: 50px;
-    
-    padding-left: 30px;
-  }
-
-  .content-home {
-    font-size: 230%;
-    line-height: 100%;
-    position: relative;
-    top: 50px;
-    padding-left: 30px;
-  }
-
-  .know {
-    position: relative;
-    top: 70px;
-    margin-left: 30px;
-    font-size: 200%;
-  }
 }
-@media only screen and (max-width:450px) {
-  
-
-  .outfit {
-    background-image: url(../img/bulb.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    background-position: center;
-    background-color: white;
-  }
-
-  .heading {
-    font-size: 230%;
-    line-height: 10px;
-    position: relative;
-    top: 0px; 
-    padding-left: 20px;
-    text-shadow: 1px 1px rgba(241, 178, 17, 0.69) ;
-    animation: move-down 3s ease 1s forwards;
-  }
-
-  @keyframes move-down {
-    0%{
-      top:0px;
-    }
-    100%{
-      top: 200px;
-    }
-  }
-
-  .content-home {
-    font-size: 150%;
-    line-height: 100%;
-    position: relative;
-    top: 200px;
-    padding-left: 20px;
-  }
-
-  .know {
-    position: relative;
-    top: 200px;
-    margin-left: 20px;
-    font-size: 150%;
-  }
-}
-
-

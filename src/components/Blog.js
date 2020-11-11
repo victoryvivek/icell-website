@@ -9,6 +9,7 @@ class NotFound extends Component {
       <div>
         <Navbar />
         <Redirect to="/comingsoon" />
+   
       </div>
     );
   }

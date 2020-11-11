@@ -5,7 +5,6 @@ import icell_logo from "../static/img/icell_background.jpg"
 const Team = () => {
     return (
         <>
-            <Navbar />
             <div className="container-fluid">
                 <div className="row upperTitleBackground">
                     <div className="col m12 s12">

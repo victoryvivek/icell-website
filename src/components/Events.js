@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-import Navbar from "../components/Navbar";
 
 import event1 from "../static/img/event-1.png";
 import event2 from "../static/img/event-2.png";
@@ -14,7 +13,6 @@ class Events extends Component {
   render() {
     return (
       <div className="outer">
-        <Navbar />
         <div class="jumbotron">
           <p class="display-4">EVENTS</p>
         </div>

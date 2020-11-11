@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../static/css/landing.css";
+import { Redirect } from "react-router-dom";
 
 class Landing extends Component {
   state = {

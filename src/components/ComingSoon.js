@@ -10,7 +10,7 @@ class NotFound extends Component {
     return (
       <>
         <div className="outfit-comingsoon">
-          <Navbar />
+          
           <div>
             <img
               className="construction-comingsoon"
@@ -24,9 +24,9 @@ class NotFound extends Component {
           </div>
 
           <div>
-            <Link to="/home" className="homebtn">
+            <a href="/home" className="homebtn">
               Show me the Homepage
-            </Link>
+            </a>
           </div>
         </div>
       </>
