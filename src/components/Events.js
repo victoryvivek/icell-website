@@ -2,12 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import { BASE_URL } from "../config/config";
 
-import event1 from "../static/img/event-1.png";
-import event2 from "../static/img/event-2.png";
-import event3 from "../static/img/event-3.png";
-import event4 from "../static/img/event-4.png";
-import event5 from "../static/img/event-5.png";
-import event6 from "../static/img/event-6.png";
 import "../static/css/events.css";
 
 import EventThumbnail from "./EventThumbnail";
