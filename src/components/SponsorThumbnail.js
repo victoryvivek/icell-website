@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import icell_logo from "../static/img/icell_background.jpg";
 
 class SponsorThumbnail extends Component {
   render() {
