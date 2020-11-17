@@ -12,7 +12,7 @@ class Landing extends Component {
       this.setState({
         display: false
       });
-    }, 5000);
+    }, 3000);
   };
 
   render() {
@@ -213,7 +213,7 @@ class Landing extends Component {
         </div>
       );
     } else {
-      window.location.href="/home"
+      window.location.href = "/home";
     }
   }
 }
