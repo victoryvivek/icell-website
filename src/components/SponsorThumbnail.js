@@ -10,6 +10,7 @@ class SponsorThumbnail extends Component {
           className="sponsorsLogo"
           data-aos="flip-left"
           data-aos-duration="1000"
+          alt="Profile Pic"
         />
       </div>
     );

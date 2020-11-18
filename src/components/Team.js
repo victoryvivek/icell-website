@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import Navbar from "../components/Navbar";
 import "../static/css/teams.css";
-import icell_logo from "../static/img/icell_background.jpg";
 
 import axios from "axios";
 import { BASE_URL } from "../config/config";
@@ -167,54 +165,9 @@ class Team extends Component {
           );
           break;
         }
-        // case "vicepresident": {
-        //   coreMembers.push(
-        //     <BigProfileCard
-        //       facebookUrl={member.facebookUrl}
-        //       email={member.email}
-        //       image={member.image}
-        //       instagramUrl={member.instagram_url}
-        //       linkedinUrl={member.linkedin_url}
-        //       phone={member.phone}
-        //       key={member._id}
-        //       name={member.name}
-        //       position={member.post}
-        //     />
-        //   );
-        //   break;
-        // }
-        // case "secretary": {
-        //   coreMembers.push(
-        //     <BigProfileCard
-        //       facebookUrl={member.facebookUrl}
-        //       email={member.email}
-        //       image={member.image}
-        //       instagramUrl={member.instagram_url}
-        //       linkedinUrl={member.linkedin_url}
-        //       phone={member.phone}
-        //       key={member._id}
-        //       name={member.name}
-        //       position={member.post}
-        //     />
-        //   );
-        //   break;
-        // }
-        // case "jointsecretary": {
-        //   coreMembers.push(
-        //     <BigProfileCard
-        //       facebookUrl={member.facebookUrl}
-        //       email={member.email}
-        //       image={member.image}
-        //       instagramUrl={member.instagram_url}
-        //       linkedinUrl={member.linkedin_url}
-        //       phone={member.phone}
-        //       key={member._id}
-        //       name={member.name}
-        //       position={member.post}
-        //     />
-        //   );
-        //   break;
-        // }
+        default: {
+          break;
+        }
       }
     });
 

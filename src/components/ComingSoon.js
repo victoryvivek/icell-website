@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-
-import Navbar from "../components/Navbar";
 import "../static/css/comingsoon.css";
 import construction from "../static/img/construction.png";
 
@@ -10,7 +7,6 @@ class NotFound extends Component {
     return (
       <>
         <div className="outfit-comingsoon">
-          
           <div>
             <img
               className="construction-comingsoon"

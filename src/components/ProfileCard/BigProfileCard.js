@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 
-import icell_logo from "../../static/img/icell_background.jpg";
-
 class BigProfileCard extends Component {
   render() {
     return (
       <div className="col m6 s12 CoreTeam">
         <div class="card grey lighten-4 cardCoreTeam">
           <div class="card-content beforeHover">
-            <img src={this.props.image} className="CoreTeamMemberImage" />
+            <img
+              src={this.props.image}
+              className="CoreTeamMemberImage"
+              alt="Profile pic"
+            />
             <span class="card-title">{this.props.name}</span>
             <p>{this.props.post}</p>
             <div className="coreTeamContact">
