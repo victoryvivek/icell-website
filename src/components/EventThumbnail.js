@@ -12,11 +12,11 @@ class EventThumbnail extends Component {
     name = name.toLowerCase();
     name = name.replace(/ +/g, "");
     let eventImage;
-    if (name == "bplan") {
+    if (name === "bplan") {
       eventImage = Bplan;
-    } else if (name == "stockhunt") {
+    } else if (name === "stockhunt") {
       eventImage = StockHunt;
-    } else if (name == "productathon") {
+    } else if (name === "productathon") {
       eventImage = Productathon;
     } else {
       eventImage = YoungLeaders;
