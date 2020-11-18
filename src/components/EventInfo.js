@@ -8,6 +8,7 @@ import Accordian from "./Accordian";
 import RoundCard from "./RoundCard";
 import Rule from "./Rule";
 import SquareCard from "./SquareCard";
+import PrizeCircle from "./PrizeCircle";
 
 class EventInfo extends Component {
   constructor(props) {
@@ -38,6 +39,7 @@ class EventInfo extends Component {
     let startDate, endDate;
     let schedule = [];
     let stages = [];
+    let prizes = [];
     let style = {
       backgroundImage: `url(${this.state.bgImgUrl})`
     };
@@ -73,6 +75,12 @@ class EventInfo extends Component {
       style = {
         backgroundImage: `url(${this.state.eventInfo.imageUrl})`
       };
+
+      let prizeObject = this.state.eventInfo.prizes;
+
+      for (let key in prizeObject) {
+        prizes.push(<PrizeCircle />);
+      }
     }
 
     return (
@@ -83,9 +91,13 @@ class EventInfo extends Component {
               {this.props.match.params.eventName}
             </p>
 
-            <button className="eventinfo-glow-on-hover" type="button">
+            <a
+              target="_blank"
+              href={this.state.success ? this.state.eventInfo.formLink : "#"}
+              className="eventinfo-glow-on-hover"
+            >
               Register
-            </button>
+            </a>
           </div>
         </div>
         <div className="eventinfo-container">
@@ -105,6 +117,12 @@ class EventInfo extends Component {
         <div className="eventinfo-container">
           <div className="eventinfo-cards-list">{schedule}</div>
         </div>
+        {/* <div className="eventinfo-container-heading">
+          <h1 className="eventinfo-h1">Prizes</h1>
+        </div>
+
+        <div>{prizes}</div> */}
+
         <br></br>
         <div className="eventinfo-container-heading">
           <h1 className="eventinfo-h1">Frequently Asked Questions</h1>
@@ -122,34 +140,3 @@ class EventInfo extends Component {
 }
 
 export default EventInfo;
-/*
-<div className="eventinfo-card 2">
-              <div className="eventinfo-card_text">
-                <div className="eventinfo-date">
-                  12 <br />
-                  Sept
-                </div>
-              </div>
-              <div className="eventinfo-card_title">Lorem</div>
-            </div>
-
-            <div className="eventinfo-card 3">
-              <div className="eventinfo-card_text">
-                <div className="eventinfo-date">
-                  12 <br />
-                  Sept
-                </div>
-              </div>
-              <div className="eventinfo-card_title">Lorem</div>
-            </div>
-
-            <div className="eventinfo-card 4">
-              <div className="eventinfo-card_text">
-                <div className="eventinfo-date">
-                  12 <br />
-                  Sept
-                </div>
-              </div>
-              <div className="eventinfo-card_title">Lorem</div>
-            </div>
-*/
