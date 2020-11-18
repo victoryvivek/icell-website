@@ -11,7 +11,7 @@ class Landing extends Component {
       this.setState({
         display: false
       });
-    }, 5000);
+    }, 3000);
   };
 
   render() {

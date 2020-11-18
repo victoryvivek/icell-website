@@ -45,8 +45,11 @@ class About extends Component {
         ) {
           var x = 200;
           var s = setInterval(() => {
-            if (patt === 0)
-              document.getElementById("eventsNo").innerText = "+" + x;
+            if (patt === 0) {
+              if (document.getElementById("eventsNo") != null)
+                document.getElementById("eventsNo").innerText = "+" + x;
+            }
+
             x = x + 1;
             if (x > 500) clearInterval(s);
           }, 5);
@@ -59,8 +62,11 @@ class About extends Component {
         ) {
           var y = 500;
           var p = setInterval(() => {
-            if (patt === 0)
-              document.getElementById("studentsNo").innerText = "+" + y;
+            if (patt === 0) {
+              if (document.getElementById("studentsNo") != null)
+                document.getElementById("studentsNo").innerText = "+" + y;
+            }
+
             y = y + 1;
             if (y > 900) clearInterval(p);
           }, 1.25);
@@ -73,8 +79,11 @@ class About extends Component {
         ) {
           var z = 400;
           var t = setInterval(() => {
-            if (patt === 0)
-              document.getElementById("expertsNo").innerText = "+" + z;
+            if (patt === 0) {
+              if (document.getElementById("expertsNo").innerText != null)
+                document.getElementById("expertsNo").innerText = "+" + z;
+            }
+
             z = z + 1;
             if (z > 750) clearInterval(t);
           }, 2.5);
