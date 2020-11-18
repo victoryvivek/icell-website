@@ -9,7 +9,10 @@ class SponsorThumbnail extends Component {
           className="sponsorsLogo"
           data-aos="flip-left"
           data-aos-duration="1000"
+
           style={{margin:"auto 30px"}}
+          alt="Profile Pic"
+
         />
     );
   }

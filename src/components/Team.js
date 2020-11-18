@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import Navbar from "../components/Navbar";
 import "../static/css/teams.css";
-import icell_logo from "../static/img/icell_background.jpg";
 
 import axios from "axios";
 import { BASE_URL } from "../config/config";
@@ -33,6 +31,7 @@ class Team extends Component {
     let mediaTeamMembers = [];
     let corporateTeamMembers = [];
     let coreMembers = [];
+    let developers = [];
 
     this.state.teams.map(member => {
       let team = member.position_holding;
@@ -167,54 +166,31 @@ class Team extends Component {
           );
           break;
         }
-        // case "vicepresident": {
-        //   coreMembers.push(
-        //     <BigProfileCard
-        //       facebookUrl={member.facebookUrl}
-        //       email={member.email}
-        //       image={member.image}
-        //       instagramUrl={member.instagram_url}
-        //       linkedinUrl={member.linkedin_url}
-        //       phone={member.phone}
-        //       key={member._id}
-        //       name={member.name}
-        //       position={member.post}
-        //     />
-        //   );
-        //   break;
-        // }
-        // case "secretary": {
-        //   coreMembers.push(
-        //     <BigProfileCard
-        //       facebookUrl={member.facebookUrl}
-        //       email={member.email}
-        //       image={member.image}
-        //       instagramUrl={member.instagram_url}
-        //       linkedinUrl={member.linkedin_url}
-        //       phone={member.phone}
-        //       key={member._id}
-        //       name={member.name}
-        //       position={member.post}
-        //     />
-        //   );
-        //   break;
-        // }
-        // case "jointsecretary": {
-        //   coreMembers.push(
-        //     <BigProfileCard
-        //       facebookUrl={member.facebookUrl}
-        //       email={member.email}
-        //       image={member.image}
-        //       instagramUrl={member.instagram_url}
-        //       linkedinUrl={member.linkedin_url}
-        //       phone={member.phone}
-        //       key={member._id}
-        //       name={member.name}
-        //       position={member.post}
-        //     />
-        //   );
-        //   break;
-        // }
+        case "developerteam": {
+          developers.push(
+            <ProfileCard
+              facebookUrl={member.facebookUrl}
+              email={member.email}
+              image={member.image}
+              instagramUrl={member.instagram_url}
+              linkedinUrl={member.linkedin_url}
+              phone={member.phone}
+              key={member._id}
+              name={member.name}
+              position="associate"
+              outerClasses={{
+                card: true,
+                indigo: true,
+                "darken-2": true,
+                cardTeamMembers: true
+              }}
+            />
+          );
+          break;
+        }
+        default: {
+          break;
+        }
       }
     });
 
@@ -274,6 +250,14 @@ class Team extends Component {
             </div>
           </div>
           <div className="row center align">{designTeamMembers}</div>
+        </div>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col m12 s12">
+              <h2 className="center align">Developers</h2>
+            </div>
+          </div>
+          <div className="row center align">{developers}</div>
         </div>
       </>
     );

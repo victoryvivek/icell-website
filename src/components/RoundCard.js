@@ -9,7 +9,7 @@ class RoundCard extends Component {
         <div className="roundcard-circle">
           <span class="material-icons">science</span>
         </div>
-        <div className="roundcard-content">Hello this is the content.</div>
+        <div className="roundcard-content">{this.props.data}</div>
       </div>
     );
   }

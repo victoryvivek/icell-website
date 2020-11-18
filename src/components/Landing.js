@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../static/css/landing.css";
-import { Redirect } from "react-router-dom";
 
 class Landing extends Component {
   state = {
@@ -12,7 +11,7 @@ class Landing extends Component {
       this.setState({
         display: false
       });
-    }, 5000);
+    }, 3000);
   };
 
   render() {
@@ -213,7 +212,7 @@ class Landing extends Component {
         </div>
       );
     } else {
-      window.location.href="/home"
+      window.location.href = "/home";
     }
   }
 }

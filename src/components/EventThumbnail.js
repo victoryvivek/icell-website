@@ -1,30 +1,32 @@
 import React, { Component } from "react";
-import Productathon from "../static/img/Productathon.png";
-import Bplan from "../static/img/Bplan.png";
-import StockHunt from "../static/img/Stock-Hunt.png";
-import YoungLeaders from "../static/img/Young-Leaders.png";
+import { BASE_URL } from "../config/config";
+import axios from "axios";
 
 class EventThumbnail extends Component {
+  state = {
+    eventInfo: {},
+    success: false
+  };
+  componentDidMount() {
+    const url = BASE_URL + this.props.eventName + "/info";
+    axios.get(url).then(res => {
+      this.setState({
+        eventInfo: res.data.eventInfo[0],
+        success: res.data.success
+      });
+    });
+  }
+
   render() {
     const infoPath = "/eventinfo/" + this.props.eventName;
 
-    let name = this.props.eventName;
-    name = name.toLowerCase();
-    name = name.replace(/ +/g, "");
-    let eventImage;
-    if (name == "bplan") {
-      eventImage = Bplan;
-    } else if (name == "stockhunt") {
-      eventImage = StockHunt;
-    } else if (name == "productathon") {
-      eventImage = Productathon;
-    } else {
-      eventImage = YoungLeaders;
-    }
-
     return (
       <div className="hovereffect rec1">
-        <img className="img-responsive" src={eventImage} alt="" />
+        <img
+          className="img-responsive"
+          src={this.state.success ? this.state.eventInfo.imageUrl : null}
+          alt={this.props.eventName}
+        />
         <div className="overlay">
           <h1>{this.props.eventName}</h1>
           <p>
