@@ -1,372 +1,283 @@
-import React from "react"
-import Navbar from "../components/Navbar"
-import "../static/css/teams.css"
-import icell_logo from "../static/img/icell_background.jpg"
-const Team = () => {
+import React, { Component } from "react";
+import Navbar from "../components/Navbar";
+import "../static/css/teams.css";
+import icell_logo from "../static/img/icell_background.jpg";
+
+import axios from "axios";
+import { BASE_URL } from "../config/config";
+
+import ProfileCard from "./ProfileCard/ProfileCard";
+import BigProfileCard from "./ProfileCard/BigProfileCard";
+
+class Team extends Component {
+  state = {
+    teams: []
+  };
+
+  componentDidMount() {
+    const url = BASE_URL + "team";
+    axios.get(url).then(res => {
+      console.log(res);
+      if (res.data.success) {
+        this.setState({
+          teams: res.data.teams
+        });
+      }
+    });
+  }
+
+  render() {
+    let designTeamMembers = [];
+    let networkTeamMembers = [];
+    let technicalTeamMembers = [];
+    let mediaTeamMembers = [];
+    let corporateTeamMembers = [];
+    let coreMembers = [];
+
+    this.state.teams.map(member => {
+      let team = member.position_holding;
+      team = team.toLowerCase();
+      team = team.replace(/ +/g, "");
+      switch (team) {
+        case "corporateteam": {
+          corporateTeamMembers.push(
+            <ProfileCard
+              facebookUrl={member.facebookUrl}
+              email={member.email}
+              image={member.image}
+              instagramUrl={member.instagram_url}
+              linkedinUrl={member.linkedin_url}
+              phone={member.phone}
+              key={member._id}
+              name={member.name}
+              post={member.post}
+              outerClasses={{
+                card: true,
+                purple: true,
+                "darken-2": true,
+                cardTeamMembers: true
+              }}
+            />
+          );
+          break;
+        }
+        case "technicalteam": {
+          technicalTeamMembers.push(
+            <ProfileCard
+              facebookUrl={member.facebookUrl}
+              email={member.email}
+              image={member.image}
+              instagramUrl={member.instagram_url}
+              linkedinUrl={member.linkedin_url}
+              phone={member.phone}
+              key={member._id}
+              name={member.name}
+              position="associate"
+              outerClasses={{
+                card: true,
+                indigo: true,
+                "darken-2": true,
+                cardTeamMembers: true
+              }}
+            />
+          );
+          break;
+        }
+
+        case "networkingandoutreachteam": {
+          networkTeamMembers.push(
+            <ProfileCard
+              facebookUrl={member.facebookUrl}
+              email={member.email}
+              image={member.image}
+              instagramUrl={member.instagram_url}
+              linkedinUrl={member.linkedin_url}
+              phone={member.phone}
+              key={member._id}
+              name={member.name}
+              position="associate"
+              outerClasses={{
+                card: true,
+                green: true,
+                "accent-3": true,
+                cardTeamMembers: true
+              }}
+            />
+          );
+          break;
+        }
+        case "marketingandmediateam": {
+          mediaTeamMembers.push(
+            <ProfileCard
+              facebookUrl={member.facebookUrl}
+              email={member.email}
+              image={member.image}
+              instagramUrl={member.instagram_url}
+              linkedinUrl={member.linkedin_url}
+              phone={member.phone}
+              key={member._id}
+              name={member.name}
+              position="associate"
+              outerClasses={{
+                card: true,
+                cyan: true,
+                "darken-2": true,
+                cardTeamMembers: true
+              }}
+            />
+          );
+          break;
+        }
+        case "designteam": {
+          designTeamMembers.push(
+            <ProfileCard
+              facebookUrl={member.facebookUrl}
+              email={member.email}
+              image={member.image}
+              instagramUrl={member.instagram_url}
+              linkedinUrl={member.linkedin_url}
+              phone={member.phone}
+              key={member._id}
+              name={member.name}
+              position="associate"
+              outerClasses={{
+                card: true,
+                orange: true,
+                "accent-3": true,
+                cardTeamMembers: true
+              }}
+            />
+          );
+          break;
+        }
+
+        case "coreteam": {
+          coreMembers.push(
+            <BigProfileCard
+              facebookUrl={member.facebookUrl}
+              email={member.email}
+              image={member.image}
+              instagramUrl={member.instagram_url}
+              linkedinUrl={member.linkedin_url}
+              phone={member.phone}
+              key={member._id}
+              name={member.name}
+              position={member.post}
+            />
+          );
+          break;
+        }
+        // case "vicepresident": {
+        //   coreMembers.push(
+        //     <BigProfileCard
+        //       facebookUrl={member.facebookUrl}
+        //       email={member.email}
+        //       image={member.image}
+        //       instagramUrl={member.instagram_url}
+        //       linkedinUrl={member.linkedin_url}
+        //       phone={member.phone}
+        //       key={member._id}
+        //       name={member.name}
+        //       position={member.post}
+        //     />
+        //   );
+        //   break;
+        // }
+        // case "secretary": {
+        //   coreMembers.push(
+        //     <BigProfileCard
+        //       facebookUrl={member.facebookUrl}
+        //       email={member.email}
+        //       image={member.image}
+        //       instagramUrl={member.instagram_url}
+        //       linkedinUrl={member.linkedin_url}
+        //       phone={member.phone}
+        //       key={member._id}
+        //       name={member.name}
+        //       position={member.post}
+        //     />
+        //   );
+        //   break;
+        // }
+        // case "jointsecretary": {
+        //   coreMembers.push(
+        //     <BigProfileCard
+        //       facebookUrl={member.facebookUrl}
+        //       email={member.email}
+        //       image={member.image}
+        //       instagramUrl={member.instagram_url}
+        //       linkedinUrl={member.linkedin_url}
+        //       phone={member.phone}
+        //       key={member._id}
+        //       name={member.name}
+        //       position={member.post}
+        //     />
+        //   );
+        //   break;
+        // }
+      }
+    });
+
     return (
-        <>
-            <div className="container-fluid">
-                <div className="row upperTitleBackground">
-                    <div className="col m12 s12">
-                        <h1 className="center align">Teams</h1>
-                    </div>
-                </div>
+      <>
+        <div className="container-fluid">
+          <div className="row upperTitleBackground">
+            <div className="col m12 s12">
+              <h1 className="center align">Teams</h1>
             </div>
-            <div className="container">
-                <div className="row">
-                    <div className="col m12 s12">
-                        <h1 className="center align">Core Team</h1>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col m6 s12 CoreTeam">
-                        <div class="card grey lighten-4 cardCoreTeam">
-                            <div class="card-content beforeHover">
-                                <img src={icell_logo} className="CoreTeamMemberImage" />
-                                <span class="card-title">Deepak Dara</span>
-                                <p>President</p>
-                                <div className="coreTeamContact">
-                                    <a href="#">
-                                    <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-envelope" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
-                                    </svg>
-                                    </a>
-                                    <a href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="2.5em" height="3em"viewBox="0 0 32 32">
-                                        <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
-                                    </svg>
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div className="col m6 s12 CoreTeam">
-                        <div class="card grey lighten-4  cardCoreTeam">
-                            <div class="card-content beforeHover">
-                                <img src={icell_logo} className="CoreTeamMemberImage" />
-                                <span class="card-title">Yashkirat</span>
-                                <p>Vice-President</p>
-                                <div className="coreTeamContact">
-                                    <a href="#">
-                                    <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-envelope" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
-                                    </svg>
-                                    </a>
-                                    <a href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="2.5em" height="3em"viewBox="0 0 32 32">
-                                        <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
-                                    </svg>
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div className="col m6 s12 CoreTeam">
-                        <div class="card grey lighten-4  cardCoreTeam">
-                            <div class="card-content  beforeHover">
-                                <img src={icell_logo} className="CoreTeamMemberImage" />
-                                <span class="card-title">Arnav Dawer</span>
-                                <p>Secretary</p>
-                                <div className="coreTeamContact">
-                                    <a href="#">
-                                    <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-envelope" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
-                                    </svg>
-                                    </a>
-                                    <a href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="2.5em" height="3em"viewBox="0 0 32 32">
-                                        <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
-                                    </svg>
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div className="col m6 s12 CoreTeam">
-                        <div class="card grey lighten-4  cardCoreTeam">
-                            <div class="card-content beforeHover">
-                                <img src={icell_logo} className="CoreTeamMemberImage" />
-                                <span class="card-title">Kumar Saurabh</span>
-                                <p>Joint Secretary</p>
-                                <div className="coreTeamContact">
-                                    <a href="#">
-                                    <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-envelope" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
-                                    </svg>
-                                    </a>
-                                    <a href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="2.5em" height="3em"viewBox="0 0 32 32">
-                                        <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
-                                    </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+          </div>
+        </div>
+        <div className="container">
+          <div className="row">
+            <div className="col m12 s12">
+              <h1 className="center align">Core Team</h1>
             </div>
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col m12 s12">
-                        <h2 className="center align">Corporate Team</h2>
-                    </div>
-                </div>
-                <div className="row center align ">
-                    <div class="card purple darken-2 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card purple darken-2 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card purple darken-2 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card purple darken-2 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card purple darken-2 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card purple darken-2 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div className="row">{coreMembers}</div>
+        </div>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col m12 s12">
+              <h2 className="center align">Corporate Team</h2>
             </div>
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col m12 s12">
-                        <h2 className="center align">Technical Team</h2>
-                    </div>
-                </div>
-                <div className="row center align">
-                    <div class="card indigo darken-2 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card indigo darken-2 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card indigo darken-2 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card indigo darken-2 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card indigo darken-2 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card indigo darken-2 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div className="row center align ">{corporateTeamMembers}</div>
+        </div>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col m12 s12">
+              <h2 className="center align">Technical Team</h2>
             </div>
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col m12 s12">
-                        <h2 className="center align">Networing and Outreach Team</h2>
-                    </div>
-                </div>
-                <div className="row center align">
-                    <div class="card cyan darken-2 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card cyan darken-2 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card cyan darken-2 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card cyan darken-2 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card cyan darken-2 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card cyan darken-2 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div className="row center align">{technicalTeamMembers}</div>
+        </div>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col m12 s12">
+              <h2 className="center align">Networing and Outreach Team</h2>
             </div>
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col m12 s12">
-                        <h2 className="center align">Marketing and Media Team</h2>
-                    </div>
-                </div>
-                <div className="row center align">
-                    <div class="card green accent-3 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card green accent-3 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card green accent-3 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card green accent-3 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card green accent-3 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card green accent-3 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div className="row center align">{networkTeamMembers}</div>
+        </div>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col m12 s12">
+              <h2 className="center align">Marketing and Media Team</h2>
             </div>
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col m12 s12">
-                        <h2 className="center align">Design Team</h2>
-                    </div>
-                </div>
-                <div className="row center align">
-                    <div class="card orange accent-3 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card orange accent-3 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card orange accent-3 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card orange accent-3 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card orange accent-3 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                    <div class="card orange accent-3 cardTeamMembers">
-                        <div class="card-content">
-                            <img src={icell_logo} className="TeamMemberImage" />
-                            <span class="card-title cardTeamMembersSpan">Name</span>
-                            <p>Member</p>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div className="row center align">{mediaTeamMembers}</div>
+        </div>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col m12 s12">
+              <h2 className="center align">Design Team</h2>
             </div>
-
-        </>
-    )
+          </div>
+          <div className="row center align">{designTeamMembers}</div>
+        </div>
+      </>
+    );
+  }
 }
 
 export default Team;
