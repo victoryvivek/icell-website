@@ -94,7 +94,8 @@
 
 .eventinfo-container {
   width: 100%;
-  margin: 10px;
+  margin: 10px auto;
+
 }
 .eventinfo-container-heading {
   padding-left: 4rem;
@@ -342,4 +343,32 @@
   .eventinfo-logo-1 {
     font-size: 2.5rem;
   }
+}
+
+@media screen and (max-width:660px)
+{
+.eventinfo-h1
+{
+  margin: auto;
+  text-align: center;
+}
+.eventinfo-container-heading
+{
+  padding: 0;
+}
+.eventinfo-card_text
+{
+  width: 100%;
+  height: auto;
+  padding-top: 17%;
+}
+.eventinfo-date
+{
+  margin-top: 0;
+  vertical-align: middle;
+}
+.eventinfo-card_title
+{
+  margin-bottom: 10px;
+}
 }
