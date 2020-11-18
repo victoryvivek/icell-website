@@ -41,69 +41,7 @@ class Events extends Component {
           </div>
         </div>
 
-        <div className="row1">
-          {events}
-
-          {/* <div className="hovereffect rec1">
-            <img className="img-responsive" src={event1} alt="" />
-            <div className="overlay">
-              <h1>Campuspreneur</h1>
-              <p>
-                <a href="#">Learn More !</a>
-              </p>
-            </div>
-          </div>
-
-          <div className="hovereffect">
-            <img className="img-responsive" src={event2} alt="" />
-            <div className="overlay">
-              <h1>B-PLAN</h1>
-              <p>
-                <a href="#">Learn More !</a>
-              </p>
-            </div>
-          </div>
-
-          <div className="hovereffect">
-            <img className="img-responsive" src={event3} alt="" />
-            <div className="overlay">
-              <h1>Productathon</h1>
-              <p>
-                <a href="#">Learn More !</a>
-              </p>
-            </div>
-          </div>
-
-          <div className="hovereffect">
-            <img className="img-responsive" src={event4} alt="" />
-            <div className="overlay">
-              <h1>Future Ceo</h1>
-              <p>
-                <a href="#">Learn More !</a>
-              </p>
-            </div>
-          </div>
-
-          <div className="hovereffect">
-            <img className="img-responsive" src={event5} alt="" />
-            <div className="overlay">
-              <h1>Young Leaders</h1>
-              <p>
-                <a href="#">Learn More !</a>
-              </p>
-            </div>
-          </div>
-
-          <div className="hovereffect">
-            <img className="img-responsive" src={event6} alt="" />
-            <div className="overlay">
-              <h1>Seminars and Workshops</h1>
-              <p>
-                <a href="#">Learn More !</a>
-              </p>
-            </div>
-          </div> */}
-        </div>
+        <div className="row1">{events}</div>
       </div>
     );
   }

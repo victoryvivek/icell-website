@@ -7,6 +7,7 @@ import "../static/css/eventinfo.css";
 import Accordian from "./Accordian";
 import RoundCard from "./RoundCard";
 import Rule from "./Rule";
+import SquareCard from "./SquareCard";
 
 class EventInfo extends Component {
   constructor(props) {
@@ -15,51 +16,68 @@ class EventInfo extends Component {
   }
 
   state = {
-    eventInfo: {}
+    eventInfo: {},
+    success: false,
+    bgImgUrl:
+      "https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1053&q=80"
   };
   componentDidMount() {
     const url = BASE_URL + this.props.match.params.eventName + "/info";
     axios.get(url).then(res => {
       this.setState({
-        eventinfo: res.data.eventInfo[0]
+        eventInfo: res.data.eventInfo[0],
+        success: res.data.success
       });
-      console.log(res);
+      console.log(res.data.eventInfo[0]);
     });
   }
 
   render() {
     let faqs = [];
-    let question = `How JavaScript Can Modify HTML and CSS Values?`;
-    let answer = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Elementum sagittis vitae et leo duis ut. Ut tortor pretium
-                  viverra suspendisse potenti.`;
-    for (let i = 0; i < 5; i++) {
-      faqs.push(
-        <Accordian
-          accordianRef={React.createRef()}
-          question={question}
-          answer={answer}
-        />
-      );
-    }
-
-    let roundCard = [];
-    for (let i = 0; i < 3; i++) {
-      roundCard.push(<RoundCard />);
-    }
-
     let rules = [];
-    let val = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
-              accusantium velit accusamus. Quae pariatur assumenda ipsum, sequi
-              quasi officiis dicta nam soluta voluptatibus sit! Iste mollitia ad
-              officiis commodi ea!`;
-    for (let i = 0; i < 3; i++) {
-      rules.push(<Rule rule={val} />);
+    let startDate, endDate;
+    let schedule = [];
+    let stages = [];
+    let style = {
+      backgroundImage: `url(${this.state.bgImgUrl})`
+    };
+
+    if (this.state.success) {
+      faqs = this.state.eventInfo.faqs.map(faq => {
+        return (
+          <Accordian
+            accordianRef={React.createRef()}
+            question={faq.question}
+            answer={faq.answer}
+          />
+        );
+      });
+
+      rules = this.state.eventInfo.rules.map(rule => {
+        return <Rule rule={rule} />;
+      });
+
+      startDate = this.state.eventInfo.startTime;
+      endDate = this.state.eventInfo.endTime;
+      schedule.push(<SquareCard schedule={startDate} content="Start Date" />);
+      schedule.push(<SquareCard schedule={endDate} content="End Date" />);
+
+      stages = this.state.eventInfo.stages.map(stage => {
+        let data = "";
+        for (let key in stage) {
+          data += key + ": " + stage[key] + " ";
+        }
+        return <RoundCard data={data} />;
+      });
+
+      style = {
+        backgroundImage: `url(${this.state.eventInfo.imageUrl})`
+      };
     }
+
     return (
       <div className="eventinfo-outer">
-        <div className="eventinfo-bgimg-1">
+        <div style={style} className="eventinfo-bgimg-1">
           <div className="eventinfo-caption">
             <p className="eventinfo-p eventinfo-logo-1">
               {this.props.match.params.eventName}
@@ -72,38 +90,40 @@ class EventInfo extends Component {
         </div>
         <div className="eventinfo-container">
           <p className="eventinfo-p eventinfo-main">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni
-            veritatis labore explicabo accusamus praesentium optio adipisci
-            asperiores ab hic totam! Voluptatem est, ratione deserunt laudantium
-            commodi iure porro dolore tempore? Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Cupiditate corrupti totam ex
-            veritatis. Voluptates quia quaerat error ex, id nobis. Voluptates
-            quo illum fugit dolore unde eaque obcaecati iusto veniam.
+            {this.state.success ? this.state.eventInfo.info : null}
           </p>
         </div>
         <div className="eventinfo-container-heading">
           <h1 className="eventinfo-h1">Stages</h1>
         </div>
 
-        <div>{roundCard}</div>
+        <div>{stages}</div>
 
         <div className="eventinfo-container-heading">
           <h1 className="eventinfo-h1">Schedule</h1>
         </div>
         <div className="eventinfo-container">
-          <div className="eventinfo-cards-list">
-            <div className="eventinfo-card 1">
-              <div className="eventinfo-card_text">
-                <div className="eventinfo-date">
-                  12 <br />
-                  Sept
-                </div>
-              </div>
+          <div className="eventinfo-cards-list">{schedule}</div>
+        </div>
+        <br></br>
+        <div className="eventinfo-container-heading">
+          <h1 className="eventinfo-h1">Frequently Asked Questions</h1>
+        </div>
+        <div className="eventinfo-container-faq">
+          <div className="eventinfo-accordion">{faqs}</div>
+        </div>
+        <div className="eventinfo-container-heading">
+          <h1 className="eventinfo-h1">Rules</h1>
+          <ol>{rules}</ol>
+        </div>
+      </div>
+    );
+  }
+}
 
-              <div className="eventinfo-card_title">Lorem</div>
-            </div>
-
-            <div className="eventinfo-card 2">
+export default EventInfo;
+/*
+<div className="eventinfo-card 2">
               <div className="eventinfo-card_text">
                 <div className="eventinfo-date">
                   12 <br />
@@ -132,22 +152,4 @@ class EventInfo extends Component {
               </div>
               <div className="eventinfo-card_title">Lorem</div>
             </div>
-          </div>
-        </div>
-        <br></br>
-        <div className="eventinfo-container-heading">
-          <h1 className="eventinfo-h1">Frequently Asked Questions</h1>
-        </div>
-        <div className="eventinfo-container-faq">
-          <div className="eventinfo-accordion">{faqs}</div>
-        </div>
-        <div className="eventinfo-container-heading">
-          <h1 className="eventinfo-h1">Rules</h1>
-          <ol>{rules}</ol>
-        </div>
-      </div>
-    );
-  }
-}
-
-export default EventInfo;
+*/

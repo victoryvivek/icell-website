@@ -14,8 +14,8 @@
 }
 .roundcard-content {
   margin: 20px;
-
   font-size: 20px;
+  text-transform: capitalize;
 }
 .roundcard-circle > span {
   position: relative;
