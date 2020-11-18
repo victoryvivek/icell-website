@@ -2,6 +2,8 @@
   height: 100%;
   margin: 0;
   font: 400 15px/1.8 "Montserrat", sans-serif;
+  /* overflow-x: visible; */
+  width: 100vw;
 }
 
 .eventinfo-bgimg-1 {
@@ -245,12 +247,6 @@
   color: black;
 }
 
-@media all and (max-width: 500px) {
-  .eventinfo-card-list {
-    flex-direction: column;
-  }
-}
-
 .eventinfo-container-faq {
   margin: 0 auto;
   padding: 1rem;
@@ -337,4 +333,13 @@
   -webkit-transition: all 0.35s ease 0.15s;
   -o-transition: all 0.35s ease 0.15s;
   transition: all 0.35s ease 0.15s;
+}
+
+@media all and (max-width: 600px) {
+  .eventinfo-card-list {
+    flex-direction: column;
+  }
+  .eventinfo-logo-1 {
+    font-size: 2.5rem;
+  }
 }
