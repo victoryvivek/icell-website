@@ -27,25 +27,25 @@ class About extends Component {
       var patt = path.search(/\/about/);
 
       var eventsNo, studentsNo, expertsNo;
-      if (patt == 0)
+      if (patt === 0)
         eventsNo = document.getElementById("eventsNo").getBoundingClientRect();
-      if (patt == 0)
+      if (patt === 0)
         studentsNo = document
           .getElementById("studentsNo")
           .getBoundingClientRect();
-      if (patt == 0)
+      if (patt === 0)
         expertsNo = document
           .getElementById("expertsNo")
           .getBoundingClientRect();
 
-      if (patt == 0)
+      if (patt === 0)
         if (
           Math.floor(eventsNo.top - window.scrollY) <= 0 &&
           Math.floor(eventsNo.top - window.scrollY) >= -100
         ) {
           var x = 200;
           var s = setInterval(() => {
-            if (patt == 0) {
+            if (patt === 0) {
               if (document.getElementById("eventsNo") != null)
                 document.getElementById("eventsNo").innerText = "+" + x;
             }
@@ -55,14 +55,14 @@ class About extends Component {
           }, 5);
         }
 
-      if (patt == 0)
+      if (patt === 0)
         if (
           Math.floor(studentsNo.top - window.scrollY) <= 0 &&
           Math.floor(studentsNo.top - window.scrollY) >= -100
         ) {
           var y = 500;
           var p = setInterval(() => {
-            if (patt == 0) {
+            if (patt === 0) {
               if (document.getElementById("studentsNo") != null)
                 document.getElementById("studentsNo").innerText = "+" + y;
             }
@@ -72,14 +72,14 @@ class About extends Component {
           }, 1.25);
         }
 
-      if (patt == 0)
+      if (patt === 0)
         if (
           Math.floor(expertsNo.top - window.scrollY) <= 0 &&
           Math.floor(expertsNo.top - window.scrollY) >= -100
         ) {
           var z = 400;
           var t = setInterval(() => {
-            if (patt == 0) {
+            if (patt === 0) {
               if (document.getElementById("expertsNo").innerText != null)
                 document.getElementById("expertsNo").innerText = "+" + z;
             }
@@ -113,6 +113,7 @@ class About extends Component {
                 className="logo"
                 data-aos="flip-left"
                 data-aos-duration="1000"
+                alt="Icell"
               />
             </div>
           </div>

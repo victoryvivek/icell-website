@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Switch, BrowserRouter } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Landing from "./components/Landing";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -12,7 +12,7 @@ import ComingSoon from "./components/ComingSoon";
 import Navbar from "./components/Navbar";
 import EventInfo from "./components/EventInfo";
 
-const Nav_components = () => {
+const NavComponents = () => {
   return (
     <>
       <Route path="/home" exact component={Home} />
@@ -30,10 +30,10 @@ class App extends Component {
   render() {
     return (
       <>
-        {window.location.pathname == "/" ? "" : <Navbar />}
+        {window.location.pathname === "/" ? "" : <Navbar />}
         <Switch>
           <Route path="/" exact component={Landing} />
-          <Nav_components />
+          <NavComponents />
           <Route component={NotFound} />
         </Switch>
       </>

@@ -2,6 +2,8 @@
   height: 100%;
   margin: 0;
   font: 400 15px/1.8 "Montserrat", sans-serif;
+  /* overflow-x: visible; */
+  width: 100vw;
 }
 
 .eventinfo-bgimg-1 {
@@ -92,7 +94,8 @@
 
 .eventinfo-container {
   width: 100%;
-  margin: 10px;
+  margin: 10px auto;
+
 }
 .eventinfo-container-heading {
   padding-left: 4rem;
@@ -245,12 +248,6 @@
   color: black;
 }
 
-@media all and (max-width: 500px) {
-  .eventinfo-card-list {
-    flex-direction: column;
-  }
-}
-
 .eventinfo-container-faq {
   margin: 0 auto;
   padding: 1rem;
@@ -337,4 +334,41 @@
   -webkit-transition: all 0.35s ease 0.15s;
   -o-transition: all 0.35s ease 0.15s;
   transition: all 0.35s ease 0.15s;
+}
+
+@media all and (max-width: 600px) {
+  .eventinfo-card-list {
+    flex-direction: column;
+  }
+  .eventinfo-logo-1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width:660px)
+{
+.eventinfo-h1
+{
+  margin: auto;
+  text-align: center;
+}
+.eventinfo-container-heading
+{
+  padding: 0;
+}
+.eventinfo-card_text
+{
+  width: 100%;
+  height: auto;
+  padding-top: 17%;
+}
+.eventinfo-date
+{
+  margin-top: 0;
+  vertical-align: middle;
+}
+.eventinfo-card_title
+{
+  margin-bottom: 10px;
+}
 }
