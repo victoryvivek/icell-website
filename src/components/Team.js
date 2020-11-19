@@ -17,7 +17,6 @@ class Team extends Component {
   componentDidMount() {
     const url = BASE_URL + "team";
     axios.get(url).then(res => {
-      console.log(res);
       if (res.data.success) {
         this.setState({
           teams: res.data.teams,
@@ -33,7 +32,7 @@ class Team extends Component {
     let technicalTeamMembers = [];
     let mediaTeamMembers = [];
     let corporateTeamMembers = [];
-    let coreMembers = [];
+    let coreMembers = [[], [], [], []];
     let developers = [];
     let content;
 
@@ -41,10 +40,14 @@ class Team extends Component {
       let team = member.position_holding;
       team = team.toLowerCase();
       team = team.replace(/ +/g, "");
-      console.log(member.name, member.post);
+
+      let post = member.post;
+      post = post.toLowerCase();
+      post = post.replace(/ +/g, "");
+
       switch (team) {
         case "corporateteam": {
-          corporateTeamMembers.push(
+          let data = (
             <ProfileCard
               facebookUrl={member.facebookUrl}
               email={member.email}
@@ -63,10 +66,16 @@ class Team extends Component {
               }}
             />
           );
+          if (post == "teamlead") {
+            corporateTeamMembers.unshift(data);
+          } else {
+            corporateTeamMembers.push(data);
+          }
+
           break;
         }
         case "technicalteam": {
-          technicalTeamMembers.push(
+          let data = (
             <ProfileCard
               facebookUrl={member.facebookUrl}
               email={member.email}
@@ -85,11 +94,16 @@ class Team extends Component {
               }}
             />
           );
+          if (post == "teamlead") {
+            technicalTeamMembers.unshift(data);
+          } else {
+            technicalTeamMembers.push(data);
+          }
           break;
         }
 
         case "networkingandoutreachteam": {
-          networkTeamMembers.push(
+          let data = (
             <ProfileCard
               facebookUrl={member.facebookUrl}
               email={member.email}
@@ -108,10 +122,15 @@ class Team extends Component {
               }}
             />
           );
+          if (post == "teamlead") {
+            networkTeamMembers.unshift(data);
+          } else {
+            networkTeamMembers.push(data);
+          }
           break;
         }
         case "marketingandmediateam": {
-          mediaTeamMembers.push(
+          let data = (
             <ProfileCard
               facebookUrl={member.facebookUrl}
               email={member.email}
@@ -130,10 +149,15 @@ class Team extends Component {
               }}
             />
           );
+          if (post == "teamlead") {
+            mediaTeamMembers.unshift(data);
+          } else {
+            mediaTeamMembers.push(data);
+          }
           break;
         }
         case "designteam": {
-          designTeamMembers.push(
+          let data = (
             <ProfileCard
               facebookUrl={member.facebookUrl}
               email={member.email}
@@ -152,11 +176,16 @@ class Team extends Component {
               }}
             />
           );
+          if (post == "teamlead") {
+            designTeamMembers.unshift(data);
+          } else {
+            designTeamMembers.push(data);
+          }
           break;
         }
 
         case "coreteam": {
-          coreMembers.push(
+          let data = (
             <BigProfileCard
               facebookUrl={member.facebookUrl}
               email={member.email}
@@ -169,6 +198,19 @@ class Team extends Component {
               post={member.post}
             />
           );
+
+          if (post === "president") {
+            coreMembers[0] = data;
+          } else if (post === "vicepresident") {
+            coreMembers[1] = data;
+          } else if (post === "secretary") {
+            coreMembers[2] = data;
+          } else if (post === "jointsecretary") {
+            coreMembers[3] = data;
+          } else {
+            coreMembers.push(data);
+          }
+
           break;
         }
         case "developerteam": {
