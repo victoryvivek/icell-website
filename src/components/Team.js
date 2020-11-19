@@ -37,6 +37,7 @@ class Team extends Component {
       let team = member.position_holding;
       team = team.toLowerCase();
       team = team.replace(/ +/g, "");
+      console.log(member.name, member.post);
       switch (team) {
         case "corporateteam": {
           corporateTeamMembers.push(
@@ -71,7 +72,7 @@ class Team extends Component {
               phone={member.phone}
               key={member._id}
               name={member.name}
-              position="associate"
+              post={member.post}
               outerClasses={{
                 card: true,
                 indigo: true,
@@ -94,7 +95,7 @@ class Team extends Component {
               phone={member.phone}
               key={member._id}
               name={member.name}
-              position="associate"
+              post={member.post}
               outerClasses={{
                 card: true,
                 green: true,
@@ -116,7 +117,7 @@ class Team extends Component {
               phone={member.phone}
               key={member._id}
               name={member.name}
-              position="associate"
+              post={member.post}
               outerClasses={{
                 card: true,
                 cyan: true,
@@ -138,7 +139,7 @@ class Team extends Component {
               phone={member.phone}
               key={member._id}
               name={member.name}
-              position="associate"
+              post={member.post}
               outerClasses={{
                 card: true,
                 orange: true,
@@ -161,7 +162,7 @@ class Team extends Component {
               phone={member.phone}
               key={member._id}
               name={member.name}
-              position={member.post}
+              post={member.post}
             />
           );
           break;
@@ -177,7 +178,7 @@ class Team extends Component {
               phone={member.phone}
               key={member._id}
               name={member.name}
-              position="associate"
+              post={member.post}
               outerClasses={{
                 card: true,
                 indigo: true,

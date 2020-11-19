@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../../static/css/profilecard.css";
 
 class ProfileCard extends Component {
   render() {
@@ -17,7 +18,7 @@ class ProfileCard extends Component {
             alt="Profile Pic"
           />
           <span class="card-title cardTeamMembersSpan">{this.props.name}</span>
-          <p>{this.props.post}</p>
+          <p className="profilecard-post">{this.props.post}</p>
         </div>
       </div>
     );
