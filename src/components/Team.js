@@ -231,7 +231,7 @@ class Team extends Component {
         <div className="container-fluid">
           <div className="row">
             <div className="col m12 s12">
-              <h2 className="center align">Networing and Outreach Team</h2>
+              <h2 className="center align">Networking and Outreach Team</h2>
             </div>
           </div>
           <div className="row center align">{networkTeamMembers}</div>

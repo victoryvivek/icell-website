@@ -16,7 +16,6 @@
     text-shadow: 0 2px 5px grey;
     padding: 6%;
     box-shadow: inset 0 2px 15px black;
-    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -24,6 +23,7 @@
 
 .upperAboutTitleBackground h1{
     font-size: 6em;
+    text-shadow: 0 0 15px grey;
 }
 .aboutPara
 {

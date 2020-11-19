@@ -205,14 +205,14 @@ class About extends Component {
           </div>
         </div>
         <div className="container-fluid">
-          <div className="row sponsorBackground">
+          <div className="row sponsorBackground" style={{marginBottom:0}}>
             <div class="container">
               <div className="row">
                 <div className="col m12 s12">
                   <h1 className="center align">Sponsors</h1>
                 </div>
               </div>
-              <div className="row">{sponsors}</div>
+              <div className="row"><div className="col s12 m12 center-align">{sponsors}</div></div>
             </div>
           </div>
         </div>
