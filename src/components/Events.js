@@ -14,7 +14,6 @@ class Events extends Component {
   };
 
   componentDidMount() {
-    console.log("ComponentDidMount");
     axios.get(BASE_URL + "activeEvents").then(response => {
       this.setState({
         events: response.data.events,

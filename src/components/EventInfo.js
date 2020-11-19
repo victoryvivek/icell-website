@@ -30,7 +30,6 @@ class EventInfo extends Component {
         eventInfo: res.data.eventInfo[0],
         success: res.data.success
       });
-      console.log(res.data.eventInfo[0]);
     });
   }
 

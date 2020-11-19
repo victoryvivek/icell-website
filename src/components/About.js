@@ -16,7 +16,6 @@ class About extends Component {
   componentDidMount() {
     const url = BASE_URL + "aboutus";
     axios.get(url).then(res => {
-      console.log(res);
       this.setState({
         sponsors: res.data.sponsors,
         success: res.data.success
