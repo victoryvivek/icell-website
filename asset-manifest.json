@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/icell-website/static/css/main.6308ee79.chunk.css",
-    "main.js": "/icell-website/static/js/main.1c801f9a.chunk.js",
-    "main.js.map": "/icell-website/static/js/main.1c801f9a.chunk.js.map",
-    "runtime-main.js": "/icell-website/static/js/runtime-main.b9c90cf9.js",
-    "runtime-main.js.map": "/icell-website/static/js/runtime-main.b9c90cf9.js.map",
-    "static/js/2.c60e8a02.chunk.js": "/icell-website/static/js/2.c60e8a02.chunk.js",
-    "static/js/2.c60e8a02.chunk.js.map": "/icell-website/static/js/2.c60e8a02.chunk.js.map",
-    "index.html": "/icell-website/index.html",
-    "precache-manifest.e692ec947481be769519d3f34115cde5.js": "/icell-website/precache-manifest.e692ec947481be769519d3f34115cde5.js",
-    "service-worker.js": "/icell-website/service-worker.js",
-    "static/css/main.6308ee79.chunk.css.map": "/icell-website/static/css/main.6308ee79.chunk.css.map",
-    "static/js/2.c60e8a02.chunk.js.LICENSE.txt": "/icell-website/static/js/2.c60e8a02.chunk.js.LICENSE.txt",
-    "static/media/about.css": "/icell-website/static/media/corporate.ca158fef.jpg",
-    "static/media/bulb.jpg": "/icell-website/static/media/bulb.c5bc70f4.jpg",
-    "static/media/comingsoon.css": "/icell-website/static/media/construction.2b407dc4.png",
-    "static/media/contact.css": "/icell-website/static/media/contact.855a34b0.jpg",
-    "static/media/events.css": "/icell-website/static/media/event-jumbotron.be44aa02.png",
-    "static/media/icell.gif": "/icell-website/static/media/icell.073467c0.gif",
-    "static/media/icell_background.jpg": "/icell-website/static/media/icell_background.82e5ebce.jpg",
-    "static/media/teams.css": "/icell-website/static/media/teamBackground.f2e25f74.jpg"
+    "main.css": "/static/css/main.e55ba55b.chunk.css",
+    "main.js": "/static/js/main.fcab2d0f.chunk.js",
+    "main.js.map": "/static/js/main.fcab2d0f.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a1f1587a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a1f1587a.js.map",
+    "static/js/2.c60e8a02.chunk.js": "/static/js/2.c60e8a02.chunk.js",
+    "static/js/2.c60e8a02.chunk.js.map": "/static/js/2.c60e8a02.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.d7172233116c0d976b596ca197897fa1.js": "/precache-manifest.d7172233116c0d976b596ca197897fa1.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.e55ba55b.chunk.css.map": "/static/css/main.e55ba55b.chunk.css.map",
+    "static/js/2.c60e8a02.chunk.js.LICENSE.txt": "/static/js/2.c60e8a02.chunk.js.LICENSE.txt",
+    "static/media/about.css": "/static/media/corporate.ca158fef.jpg",
+    "static/media/bulb.jpg": "/static/media/bulb.c5bc70f4.jpg",
+    "static/media/comingsoon.css": "/static/media/construction.2b407dc4.png",
+    "static/media/contact.css": "/static/media/contact.855a34b0.jpg",
+    "static/media/events.css": "/static/media/event-jumbotron.be44aa02.png",
+    "static/media/icell.gif": "/static/media/icell.073467c0.gif",
+    "static/media/icell_background.jpg": "/static/media/icell_background.82e5ebce.jpg",
+    "static/media/teams.css": "/static/media/teamBackground.f2e25f74.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.b9c90cf9.js",
+    "static/js/runtime-main.a1f1587a.js",
     "static/js/2.c60e8a02.chunk.js",
-    "static/css/main.6308ee79.chunk.css",
-    "static/js/main.1c801f9a.chunk.js"
+    "static/css/main.e55ba55b.chunk.css",
+    "static/js/main.fcab2d0f.chunk.js"
   ]
 }
