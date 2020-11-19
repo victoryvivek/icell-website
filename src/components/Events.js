@@ -5,26 +5,35 @@ import { BASE_URL } from "../config/config";
 import "../static/css/events.css";
 
 import EventThumbnail from "./EventThumbnail";
+import Spinner from "./Spinner";
 
 class Events extends Component {
   state = {
-    events: []
+    events: [],
+    success: false
   };
 
   componentDidMount() {
     console.log("ComponentDidMount");
     axios.get(BASE_URL + "activeEvents").then(response => {
       this.setState({
-        events: response.data.events
+        events: response.data.events,
+        success: response.data.success
       });
-      console.log(response);
     });
   }
 
   render() {
-    const events = this.state.events.map(event => {
-      return <EventThumbnail eventName={event.name} />;
-    });
+    let events;
+    if (this.state.success) {
+      events = this.state.events.map(event => {
+        return <EventThumbnail eventName={event.name} />;
+      });
+
+      events = <div className="row1">{events}</div>;
+    } else {
+      events = <Spinner />;
+    }
 
     return (
       <div className="outer">
@@ -41,7 +50,7 @@ class Events extends Component {
           </div>
         </div>
 
-        <div className="row1">{events}</div>
+        {events}
       </div>
     );
   }

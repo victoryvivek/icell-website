@@ -5,10 +5,12 @@ import icell_logo from "../static/img/icell_background.jpg";
 import { BASE_URL } from "../config/config";
 
 import SponsorThumbnail from "./SponsorThumbnail";
+import Spinner from "./Spinner";
 
 class About extends Component {
   state = {
-    sponsors: []
+    sponsors: [],
+    success: false
   };
 
   componentDidMount() {
@@ -16,7 +18,8 @@ class About extends Component {
     axios.get(url).then(res => {
       console.log(res);
       this.setState({
-        sponsors: res.data.sponsors
+        sponsors: res.data.sponsors,
+        success: res.data.success
       });
     });
   }
@@ -80,7 +83,7 @@ class About extends Component {
           var z = 400;
           var t = setInterval(() => {
             if (patt === 0) {
-              if (document.getElementById("expertsNo").innerText != null)
+              if (document.getElementById("expertsNo") != null)
                 document.getElementById("expertsNo").innerText = "+" + z;
             }
 
@@ -90,11 +93,17 @@ class About extends Component {
         }
     };
 
-    const sponsors = this.state.sponsors.map(sponsor => {
-      return (
-        <SponsorThumbnail name={sponsor.name} imageUrl={sponsor.imageUrl} />
-      );
-    });
+    let sponsors;
+
+    if (this.state.success) {
+      sponsors = this.state.sponsors.map(sponsor => {
+        return (
+          <SponsorThumbnail name={sponsor.name} imageUrl={sponsor.imageUrl} />
+        );
+      });
+    } else {
+      sponsors = <Spinner />;
+    }
 
     return (
       <div>
@@ -205,14 +214,16 @@ class About extends Component {
           </div>
         </div>
         <div className="container-fluid">
-          <div className="row sponsorBackground" style={{marginBottom:0}}>
+          <div className="row sponsorBackground" style={{ marginBottom: 0 }}>
             <div class="container">
               <div className="row">
                 <div className="col m12 s12">
                   <h1 className="center align">Sponsors</h1>
                 </div>
               </div>
-              <div className="row"><div className="col s12 m12 center-align">{sponsors}</div></div>
+              <div className="row">
+                <div className="col s12 m12 center-align">{sponsors}</div>
+              </div>
             </div>
           </div>
         </div>
