@@ -9,6 +9,7 @@ import RoundCard from "./RoundCard";
 import Rule from "./Rule";
 import SquareCard from "./SquareCard";
 import PrizeCircle from "./PrizeCircle";
+import Spinner from "./Spinner";
 
 class EventInfo extends Component {
   constructor(props) {
@@ -43,6 +44,7 @@ class EventInfo extends Component {
     let style = {
       backgroundImage: `url(${this.state.bgImgUrl})`
     };
+    let content;
 
     if (this.state.success) {
       faqs = this.state.eventInfo.faqs.map(faq => {
@@ -81,6 +83,47 @@ class EventInfo extends Component {
       for (let key in prizeObject) {
         prizes.push(<PrizeCircle />);
       }
+
+      content = (
+        <>
+          <div className="eventinfo-container">
+            <p className="eventinfo-p eventinfo-main">
+              {this.state.success ? this.state.eventInfo.info : null}
+            </p>
+          </div>
+          <div className="eventinfo-container-heading">
+            <h1 className="eventinfo-h1">Stages</h1>
+          </div>
+
+          <div>{stages}</div>
+
+          <div className="eventinfo-container-heading">
+            <h1 className="eventinfo-h1">Schedule</h1>
+          </div>
+          <div className="eventinfo-container">
+            <div className="eventinfo-cards-list">{schedule}</div>
+          </div>
+          {/* <div className="eventinfo-container-heading">
+          <h1 className="eventinfo-h1">Prizes</h1>
+        </div>
+
+        <div>{prizes}</div> */}
+
+          <br></br>
+          <div className="eventinfo-container-heading">
+            <h1 className="eventinfo-h1">Frequently Asked Questions</h1>
+          </div>
+          <div className="eventinfo-container-faq">
+            <div className="eventinfo-accordion">{faqs}</div>
+          </div>
+          <div className="eventinfo-container-heading">
+            <h1 className="eventinfo-h1">Rules</h1>
+            <ol>{rules}</ol>
+          </div>
+        </>
+      );
+    } else {
+      content = <Spinner />;
     }
 
     return (
@@ -100,40 +143,7 @@ class EventInfo extends Component {
             </a>
           </div>
         </div>
-        <div className="eventinfo-container">
-          <p className="eventinfo-p eventinfo-main">
-            {this.state.success ? this.state.eventInfo.info : null}
-          </p>
-        </div>
-        <div className="eventinfo-container-heading">
-          <h1 className="eventinfo-h1">Stages</h1>
-        </div>
-
-        <div>{stages}</div>
-
-        <div className="eventinfo-container-heading">
-          <h1 className="eventinfo-h1">Schedule</h1>
-        </div>
-        <div className="eventinfo-container">
-          <div className="eventinfo-cards-list">{schedule}</div>
-        </div>
-        {/* <div className="eventinfo-container-heading">
-          <h1 className="eventinfo-h1">Prizes</h1>
-        </div>
-
-        <div>{prizes}</div> */}
-
-        <br></br>
-        <div className="eventinfo-container-heading">
-          <h1 className="eventinfo-h1">Frequently Asked Questions</h1>
-        </div>
-        <div className="eventinfo-container-faq">
-          <div className="eventinfo-accordion">{faqs}</div>
-        </div>
-        <div className="eventinfo-container-heading">
-          <h1 className="eventinfo-h1">Rules</h1>
-          <ol>{rules}</ol>
-        </div>
+        {content}
       </div>
     );
   }

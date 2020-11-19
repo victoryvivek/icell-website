@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "../../static/css/bigprofilecard.css";
 class BigProfileCard extends Component {
   render() {
     return (
@@ -12,7 +12,7 @@ class BigProfileCard extends Component {
               alt="Profile pic"
             />
             <span class="card-title">{this.props.name}</span>
-            <p>{this.props.post}</p>
+            <p className="bigprofilecard-post">{this.props.post}</p>
             <div className="coreTeamContact">
               <a href={this.props.email}>
                 <svg

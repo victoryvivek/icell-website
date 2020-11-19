@@ -6,10 +6,12 @@ import { BASE_URL } from "../config/config";
 
 import ProfileCard from "./ProfileCard/ProfileCard";
 import BigProfileCard from "./ProfileCard/BigProfileCard";
+import Spinner from "./Spinner";
 
 class Team extends Component {
   state = {
-    teams: []
+    teams: [],
+    success: false
   };
 
   componentDidMount() {
@@ -18,7 +20,8 @@ class Team extends Component {
       console.log(res);
       if (res.data.success) {
         this.setState({
-          teams: res.data.teams
+          teams: res.data.teams,
+          success: res.data.success
         });
       }
     });
@@ -32,11 +35,13 @@ class Team extends Component {
     let corporateTeamMembers = [];
     let coreMembers = [];
     let developers = [];
+    let content;
 
     this.state.teams.map(member => {
       let team = member.position_holding;
       team = team.toLowerCase();
       team = team.replace(/ +/g, "");
+      console.log(member.name, member.post);
       switch (team) {
         case "corporateteam": {
           corporateTeamMembers.push(
@@ -71,7 +76,7 @@ class Team extends Component {
               phone={member.phone}
               key={member._id}
               name={member.name}
-              position="associate"
+              post={member.post}
               outerClasses={{
                 card: true,
                 indigo: true,
@@ -94,7 +99,7 @@ class Team extends Component {
               phone={member.phone}
               key={member._id}
               name={member.name}
-              position="associate"
+              post={member.post}
               outerClasses={{
                 card: true,
                 green: true,
@@ -116,7 +121,7 @@ class Team extends Component {
               phone={member.phone}
               key={member._id}
               name={member.name}
-              position="associate"
+              post={member.post}
               outerClasses={{
                 card: true,
                 cyan: true,
@@ -138,7 +143,7 @@ class Team extends Component {
               phone={member.phone}
               key={member._id}
               name={member.name}
-              position="associate"
+              post={member.post}
               outerClasses={{
                 card: true,
                 orange: true,
@@ -161,7 +166,7 @@ class Team extends Component {
               phone={member.phone}
               key={member._id}
               name={member.name}
-              position={member.post}
+              post={member.post}
             />
           );
           break;
@@ -177,7 +182,7 @@ class Team extends Component {
               phone={member.phone}
               key={member._id}
               name={member.name}
-              position="associate"
+              post={member.post}
               outerClasses={{
                 card: true,
                 indigo: true,
@@ -194,6 +199,71 @@ class Team extends Component {
       }
     });
 
+    if (this.state.success) {
+      content = (
+        <>
+          <div className="container">
+            <div className="row">
+              <div className="col m12 s12">
+                <h1 className="center align">Core Team</h1>
+              </div>
+            </div>
+            <div className="row">{coreMembers}</div>
+          </div>
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col m12 s12">
+                <h2 className="center align">Corporate Team</h2>
+              </div>
+            </div>
+            <div className="row center align ">{corporateTeamMembers}</div>
+          </div>
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col m12 s12">
+                <h2 className="center align">Technical Team</h2>
+              </div>
+            </div>
+            <div className="row center align">{technicalTeamMembers}</div>
+          </div>
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col m12 s12">
+                <h2 className="center align">Networking and Outreach Team</h2>
+              </div>
+            </div>
+            <div className="row center align">{networkTeamMembers}</div>
+          </div>
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col m12 s12">
+                <h2 className="center align">Marketing and Media Team</h2>
+              </div>
+            </div>
+            <div className="row center align">{mediaTeamMembers}</div>
+          </div>
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col m12 s12">
+                <h2 className="center align">Design Team</h2>
+              </div>
+            </div>
+            <div className="row center align">{designTeamMembers}</div>
+          </div>
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col m12 s12">
+                <h2 className="center align">Developers</h2>
+              </div>
+            </div>
+            <div className="row center align">{developers}</div>
+          </div>
+        </>
+      );
+    } else {
+      content = <Spinner />;
+    }
+
     return (
       <>
         <div className="container-fluid">
@@ -203,62 +273,7 @@ class Team extends Component {
             </div>
           </div>
         </div>
-        <div className="container">
-          <div className="row">
-            <div className="col m12 s12">
-              <h1 className="center align">Core Team</h1>
-            </div>
-          </div>
-          <div className="row">{coreMembers}</div>
-        </div>
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col m12 s12">
-              <h2 className="center align">Corporate Team</h2>
-            </div>
-          </div>
-          <div className="row center align ">{corporateTeamMembers}</div>
-        </div>
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col m12 s12">
-              <h2 className="center align">Technical Team</h2>
-            </div>
-          </div>
-          <div className="row center align">{technicalTeamMembers}</div>
-        </div>
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col m12 s12">
-              <h2 className="center align">Networking and Outreach Team</h2>
-            </div>
-          </div>
-          <div className="row center align">{networkTeamMembers}</div>
-        </div>
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col m12 s12">
-              <h2 className="center align">Marketing and Media Team</h2>
-            </div>
-          </div>
-          <div className="row center align">{mediaTeamMembers}</div>
-        </div>
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col m12 s12">
-              <h2 className="center align">Design Team</h2>
-            </div>
-          </div>
-          <div className="row center align">{designTeamMembers}</div>
-        </div>
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col m12 s12">
-              <h2 className="center align">Developers</h2>
-            </div>
-          </div>
-          <div className="row center align">{developers}</div>
-        </div>
+        {content}
       </>
     );
   }
