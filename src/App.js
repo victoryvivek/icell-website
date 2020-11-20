@@ -15,14 +15,17 @@ import EventInfo from "./components/EventInfo";
 const NavComponents = () => {
   return (
     <>
-      <Route path="/home" exact component={Home} />
-      <Route path="/about" exact component={About} />
-      <Route path="/events" exact component={Events} />
-      <Route path="/team" exact component={Teams} />
-      <Route path="/blog" exact component={Blog} />
-      <Route path="/contact" exact component={ContactUs} />
-      <Route path="/comingsoon" exact component={ComingSoon} />
-      <Route path="/eventinfo/:eventName" exact component={EventInfo} />
+      <Switch>
+        <Route path="/home" exact component={Home} />
+        <Route path="/about" exact component={About} />
+        <Route path="/events" exact component={Events} />
+        <Route path="/team" exact component={Teams} />
+        <Route path="/blog" exact component={Blog} />
+        <Route path="/contact" exact component={ContactUs} />
+        <Route path="/comingsoon" exact component={ComingSoon} />
+        <Route path="/eventinfo/:eventName" exact component={EventInfo} />
+        <Route component={NotFound} />
+      </Switch>
     </>
   );
 };
@@ -34,7 +37,6 @@ class App extends Component {
         <Switch>
           <Route path="/" exact component={Landing} />
           <NavComponents />
-          <Route component={NotFound} />
         </Switch>
       </>
     );
