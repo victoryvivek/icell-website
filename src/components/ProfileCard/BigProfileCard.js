@@ -3,7 +3,7 @@ import "../../static/css/bigprofilecard.css";
 class BigProfileCard extends Component {
   render() {
     return (
-      <div className="col m6 s12 CoreTeam">
+      
         <div class="card grey lighten-4 cardCoreTeam">
           <div class="card-content beforeHover">
             <img
@@ -43,7 +43,7 @@ class BigProfileCard extends Component {
             </div>
           </div>
         </div>
-      </div>
+      
     );
   }
 }

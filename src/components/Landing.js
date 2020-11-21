@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import "../static/css/landing.css";
 
 class Landing extends Component {
@@ -212,7 +213,7 @@ class Landing extends Component {
         </div>
       );
     } else {
-      window.location.href = "/home";
+      window.location.href="/home"
     }
   }
 }

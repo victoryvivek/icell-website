@@ -28,6 +28,7 @@ function closeSideNav()
 }
 class NavBar extends Component {
   render() {
+    
     return (
       <>
         <nav className="navbar">
