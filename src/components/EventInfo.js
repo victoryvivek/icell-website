@@ -25,12 +25,19 @@ class EventInfo extends Component {
   };
   componentDidMount() {
     const url = BASE_URL + this.props.match.params.eventName + "/info";
-    axios.get(url).then(res => {
-      this.setState({
-        eventInfo: res.data.eventInfo[0],
-        success: res.data.success
+    axios
+      .get(url)
+      .then(res => {
+        this.setState({
+          eventInfo: res.data.eventInfo[0],
+          success: res.data.success
+        });
+      })
+      .then(() => {
+        if (this.state.success == false) {
+          window.location.href = "/notfound";
+        }
       });
-    });
   }
 
   render() {
