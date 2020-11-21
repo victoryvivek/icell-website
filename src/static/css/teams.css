@@ -14,28 +14,47 @@
   font-size: 6em;
   text-shadow: 0 0 10px grey,0 0 20px grey;
 }
-.CoreTeam .card,
+.cardCoreTeam,
 .cardTeamMembers {
-  margin: 5% 10%;
+  margin: 5% auto;
   border-radius: 10%;
   box-shadow: 0px 10px 10px grey;
   height: 400px;
 }
-.CoreTeam .card-content,
+
+.cardCoreTeam
+{
+  width: 22vw;
+  display: inline-block!important;
+  margin: 5% 2vw;
+}
+@media screen and (max-width:660px)
+{
+  .cardCoreTeam
+  {
+    width: 85vw;
+    margin: 5% auto;
+  } 
+}
+.cardCoreTeam .card-content,
 .cardTeamMembers {
   text-align: center;
 }
-.CoreTeam .card-title {
+
+.cardCoreTeam .card-title {
   font-weight: bold !important;
   font-size: xx-large !important;
   font-family: Montserrat;
 }
-.CoreTeam .card-content p {
+
+.cardCoreTeam .card-content p {
   font-size: larger;
   font-style: italic;
 }
 .CoreTeamMemberImage {
   width: 200px;
+  height: 200px;
+  object-fit: cover;
   border-radius: 50%;
 }
 .cardTeamMembers {
@@ -43,17 +62,23 @@
   margin: 2% 2% !important;
   color: white !important;
   height: 250px;
-  width: auto;
+  width: 160px;
+}
+.cardTeamMembers .card-content{
+  padding: 0;
 }
 .cardTeamMembersSpan {
   font-size: 1em !important;
+  text-align: center;
   line-break: loose;
+  width: 100%;
 }
 .TeamMemberImage {
   width: 100px;
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
+  margin-top: 20px;
 }
 .cardCoreTeam:hover {
   background-color: rgba(0, 0, 0, 0.2) !important;

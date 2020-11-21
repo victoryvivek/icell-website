@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import Landing from "./components/Landing";
 import Home from "./components/Home";
@@ -13,6 +13,7 @@ import Navbar from "./components/Navbar";
 import EventInfo from "./components/EventInfo";
 
 const NavComponents = () => {
+  
   return (
     <>
       <Switch>
@@ -30,10 +31,13 @@ const NavComponents = () => {
   );
 };
 class App extends Component {
+  
+  
   render() {
+    
     return (
       <>
-        {window.location.pathname === "/" ? "" : <Navbar />}
+      {window.location.pathname=="/"?"": <Navbar />}
         <Switch>
           <Route path="/" exact component={Landing} />
           <NavComponents />

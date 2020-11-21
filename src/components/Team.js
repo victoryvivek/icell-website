@@ -250,7 +250,7 @@ class Team extends Component {
                 <h1 className="center align">Core Team</h1>
               </div>
             </div>
-            <div className="row">{coreMembers}</div>
+            <div className="row center align">{coreMembers}</div>
           </div>
           <div className="container-fluid">
             <div className="row">
