@@ -24,7 +24,7 @@
 
 .cardCoreTeam
 {
-  width: 22vw;
+  width: 340px;
   display: inline-block!important;
   margin: 5% 2vw;
 }
@@ -45,6 +45,7 @@
   font-weight: bold !important;
   font-size: xx-large !important;
   font-family: Montserrat;
+  margin: auto;
 }
 
 .cardCoreTeam .card-content p {
