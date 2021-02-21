@@ -1,0 +1,70 @@
+.banner {
+    width: 100vw;
+    height: 10vh;
+    background: rgba(0, 0, 0, 1);
+    opacity: 1;
+    overflow: hidden;
+}
+
+.banner_text {
+    width: 100%;
+    height: 7vh;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    margin: auto;
+    font-family: Roboto;
+    font-size: 3vw;
+    text-align: center;
+}
+
+.login {
+    background: #eceeee;
+    border: 1px solid #42464b;
+    border-radius: 6px;
+    height: 40vh;
+    margin: 20px auto 0;
+    width: 24vw;
+}
+
+.login h1 {
+
+    border-bottom: 1px solid #a6abaf;
+    border-radius: 6px 6px 0 0;
+    box-sizing: border-box;
+    color: #727678;
+    display: block;
+    height: 43px;
+    font: 600 14px/1 'Arial', sans-serif;
+    padding-top: 14px;
+    margin: 0;
+    text-align: center;
+}
+
+.input_panel{
+    color: #696969;
+    height: 4vh;
+    margin: 31px 0 0 29px;
+    width: 17vw;
+}
+
+input[type="submit"] {
+    
+    width: 6vw;
+    height: 4vh;
+    display: block;
+    font-family: 'arial';
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 1px 1px 0px green;
+    padding-top: 6px;
+    margin: 29px 0 0 29px;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    background-color: #37a69b;
+
+}
