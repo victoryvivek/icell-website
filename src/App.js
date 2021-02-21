@@ -11,6 +11,11 @@ import ContactUs from "./components/Contact";
 import ComingSoon from "./components/ComingSoon";
 import Navbar from "./components/Navbar";
 import EventInfo from "./components/EventInfo";
+import Blogadd from "./components/Blogadd";
+import Dashboard from "./components/Dashboard";
+import Eventadd from "./components/Eventadd";
+import LoginPage from "./components/LoginPage";
+
 
 const NavComponents = () => {
   
@@ -25,6 +30,10 @@ const NavComponents = () => {
         <Route path="/contact" exact component={ContactUs} />
         <Route path="/comingsoon" exact component={ComingSoon} />
         <Route path="/eventinfo/:eventName" exact component={EventInfo} />
+        <Route path="/Blogadd" exact component={Blogadd} />
+        <Route path="/Dashboard" exact component={Dashboard} />
+        <Route path="/Eventadd" exact component={Eventadd} />
+        <Route path="/LoginPage" exact component={LoginPage} />
         <Route component={NotFound} />
       </Switch>
     </>
